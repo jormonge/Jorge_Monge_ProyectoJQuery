@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jquery Course - SoloLearn</title> 
+        <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+        <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+            <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+            
+            <script src="assets/javascript/main.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/javascript/test.js"></script>
+            <script src="assets/javascript/main.js"></script>
+
+    </head>
+
+    <body>
+        <!-- ===================
+        Primary header
+        ========================   ---->
+        <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/jQuery/" target="_blank">👉 Here.</a></h3>
+
+            <h3 style="position: absolute; right: 100px; top: 23px ">
+                Julio 24 &mdash; 2019; San José, C.R
+            </h3>
+        
+            <div class="navIcon" onclick="releaseNav()" >
+            <p>&equiv; </p> 
+            </div>
+
+            <nav class="fixSideNav" id="navIcon">
+                    <ul>
+                        <li>
+                        JavaScript
+                        <ul style="text-align: center">
+                            <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                            <li><a href="classes.html">Classes in ES6</a></li>
+                            <li><a href="mapSet.html">Map & Set</a></li>
+                            <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                            <li><a href="moreE6-2.html">Modules</a></li>
+                            
+                        </ul> 
+    
+                        </li>
+                        <li>
+                            JQuery
+                            <ul style="text-align: center">
+                                <li><a href="jquery.html">Overview</a></li>
+                                <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                                <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                                <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                                <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                                <li><a href="jqueryDOM.html">The DOM</a></li>
+                                <li><a href="jqueryEvents.html">Handling Events</a></li>
+                                <li><a href="jqueryEffects.html">Effects</a></li>
+                                <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </nav>
+
+        </header>
+
+        <br><br>
+
+        <!-- =================
+        Contenido Principal
+        ======================   ---->
+
+
+        <section class="container"> <!-- == Full Promises Section == -->
+
+            <h3>JQuery Handling Events</h3> 
+            <h3>learn.shayhowe info<a href="https://learn.shayhowe.com/advanced-html-css/jquery/#jquery" target="_blank">👉 Here.</a></h3>
+
+        
+            <div class="container">  <!-- == Events Section == -->
+            
+                <h2>Common Events</h2>
+        
+                <p>
+
+                    The following are the most commonly used events:
+                    <br><br>
+                    <b>Mouse Events:</b>
+                    <ul>
+                        <li>
+                            <span class="spamtext2">click</span> occurs when an element is clicked.
+                        </li>
+                        <li>
+                            <span class="spamtext2">dblclick</span> occurs when an element is double-clicked.
+                        </li>
+                        <li>
+                            <span class="spamtext2">mouseenter</span> occurs when the mouse pointer is over (enters) the selected element.
+                        </li>
+                        <li>
+                            <span class="spamtext2">mouseleave</span> occurs when the mouse pointer leaves the selected element.
+                        </li>
+                        <li>
+                            <span class="spamtext2">mouseover</span> occurs when the mouse pointer is over the selected element.
+                        </li>
+                    </ul>
+
+                    <br><br>
+                    <b>Keyboard Events:</b>
+                    <ul>
+                        <li>
+                            <span class="spamtext2">keydown</span> occurs when a keyboard key is pressed down.
+                        </li>
+                        <li>
+                            <span class="spamtext2">keyup</span> occurs when a keyboard key is released.
+                        </li>
+                    </ul>
+
+
+                    <br><br>
+                    <b>Form Events:</b>
+                    <ul>
+                        <li>
+                            <span class="spamtext2">submit</span> occurs when a form is submitted.
+                        </li>
+                        <li>
+                            <span class="spamtext2">change</span> occurs when the value of an element has been changed.
+                        </li>
+                        <li>
+                            <span class="spamtext2">focus</span> occurs when an element gets focus.
+                        </li>
+                        <li>
+                            <span class="spamtext2">blur</span> occurs when an element loses focus.
+                        </li>
+                    </ul>
+
+                    <br><br>
+                    <b>Document Events:</b>
+                    <ul>
+                        <li>
+                            <span class="spamtext2">ready</span> occurs when the DOM has been loaded.
+                        </li>
+                        <li>
+                            <span class="spamtext2">resize</span> occurs when the browser window changes size.
+                        </li>
+                        <li>
+                            <span class="spamtext2">scroll</span> occurs when the user scrolls in the specified element.
+                        </li>
+                    </ul>
+
+                    As an example, let's change the content of a div when the user types in an input field. To do that, we need to handle the <span class="spamtext">keydown</span> event, which occurs when a key on the keyboard is pressed:
+                    <br><br>
+                    <b>HTML:</b>
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                    &#8249;input type="text" id="name" /><br>
+                    &#8249;div id="msg">&#8249;/div><br>       
+                        </pre>
+                    </code>
+                    <br><br>
+                    <b>JS:</b>
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                    $("#name").keydown(function() {<br>
+                        $("#msg").html($("#name").val());<br>
+                        });<br>      
+                        </pre>
+                    </code> 
+                    
+                    The code above handles the keydown event for the element with id="name" and assigns the content of the div with id="msg" the value of the input field.
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        <input type="text" id="name" />
+                        <div id="msg">Esto es un Div de prueba:
+                                <div id="msg2">
+                                    
+                                </div>
+                        </div>
+                            
+                        
+                    <script>
+                        $("#name").keydown(function() {
+                            $("#msg2").html($("#name").val()); 
+                            });
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+                <br>
+                <div class="notificationBox" style="text-align: center">
+
+                        <p>
+                            The event names are self-explanatory, so just experiment to see them in action.
+                        </p>      
+                </div>
+
+            </div> <!-- == End of Events Section == -->
+            
+            <br>
+            <hr>
+            <br>
+
+            <div class="container">  <!-- == To-Do List Section == -->
+            
+                <h2>Creating a To-Do List</h2>
+        
+                <p>
+
+                        Let's create a To-Do list project using the concepts we have learned.
+                        <br><br>
+                        The To-Do list will be able to add new items to a list, as well as remove existing items.
+                        <br><br>
+                        First, we create the HTML: 
+                        <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                    &#8249;h1>My To-Do List&#8249;/h1><br>
+                    &#8249;input type="text" placeholder="New item" /><br>
+                    &#8249;button id="add">Add&#8249;/button><br>
+                    &#8249;ol id="mylist">&#8249;/ol>   <br>  
+                        </pre>
+                    </code>
+
+                </p>
+                <br>
+                <div class="notificationBox" style="text-align: center">
+
+                        Clicking the button should add the value of the input field to our  &#8249;ol> list.
+
+                </div>
+                <br>
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        <h1>My To-Do List</h1>
+                        <input type="text" placeholder="New item" />
+                        <button id="add">Add</button>
+                        <ol id="mylist"></ol>
+                            
+                        
+                    <script>
+
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+
+                <p>
+
+                        Now, having the HTML ready, we can start writing our jQuery code.
+                        <br><br>
+                        First, we handle the click event for the button: 
+                        <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                    $(function() {<br>
+                        $("#add").on("click", function() {<br>
+                            //event handler<br>
+                        });<br>
+                    }); <br>
+                        </pre>
+                    </code>
+                    <br>
+                    Inside the event handler we select the value of the input field and create a new &#8249;li> element, adding it to the list:
+                    <br><br>
+                    <code>
+                            <pre style="line-height: 0.8">
+                    var val = $("input").val();<br>
+                    if(val !== '') {<br>
+                        var elem = $("&#8249;li>&#8249;/li>").text(val);<br>
+                        $(elem).append("&#8249;button class='rem'>X&#8249;/button>");<br>
+                        $("#mylist").append(elem);<br>
+                        $("input").val(""); //clear the input<br>
+                    }<br>
+                            </pre>
+                        </code>
+                </p>
+                
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        <h1>My To-Do List</h1>
+                        <input type="text" placeholder="New item" id="2ndInput" />
+                        <button id="add2">Add</button>
+                        <ol id="mylist2"></ol>
+                            
+                        
+                    <script>
+                        $(function() {
+                            $("#add2").on("click", function() { // after this goes the event handler
+                                var val = $("#2ndInput").val(); // declaramos una variable que tome el valor del input
+                                if(val !== '') { // si el valor del input no esta empty
+                                    var elem = $("<li></li>").text(val);
+                                    $(elem).append(" <button class='rem'>X</button>");//le estan metiendo el <li> un button, y a ese button le esta asignando la clase de CSS ".rem" 
+                                    $("#mylist2").append(elem);  // aca le meten el nuevo <li> element al <ol>
+                                    $("#2ndInput").val(""); //clear the input
+                                    }
+                            });
+                        });
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+
+                <div class="notificationBox" style="text-align: center">
+
+                        The remove button is not working yet. We will handle it in the next section!
+
+                </div>
+                <br><br>
+                <p>
+                    All that is left to do is handle the click event on the class="rem" button and remove the corresponding &#8249;li> element from the list.
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                $(".rem").on("click", function() {<br>
+                    $(this).parent().remove();<br>
+                    });<br>
+                        </pre>
+                    </code>
+                    <br>
+                    Remember, <span class="spamtext2">this</span> is the current object. The code above removes the parent of the current object, which in our case is the parent of the remove button, the <span class="spamtext">&#8249;li></span> element.
+                    <br><br>
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        <h1>My To-Do List</h1>
+                        <input type="text" placeholder="New item" id="3rdInput" />
+                        <button id="add3">Add</button>
+                        <ol id="mylist3"></ol>
+                            
+                        
+                    <script>
+                        $(function() {
+                            $("#add3").on("click", function() { // after this goes the event handler
+                                var val = $("#3rdInput").val(); // declaramos una variable que tome el valor del input
+                                if(val !== '') { // si el valor del input no esta empty
+                                    var elem = $("<li></li>").text(val);
+                                    $(elem).append(" <button class='rem'>X</button>");//le estan metiendo el <li> un button, y a ese button le esta asignando la clase de CSS ".rem" 
+                                    $("#mylist3").append(elem);  // aca le meten el nuevo <li> element al <ol>
+                                    $("#3rdInput").val(""); //clear the input
+                                    $(".rem").on("click", function() {
+                                        $(this).parent().remove();// al darle click al button con la class de .rem --- se selecciona el parent de ese button, que seria el <li> element y se borra
+                                        });
+                                    }
+                            });
+                        });
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+
+                <div class="notificationBox" style="text-align: center">
+
+                        The To-Do List was just a short demonstration of how to handle events and build a simple project.
+
+                </div>
+
+            </div> <!-- == End of Events Section == -->
+
+
+        </section>  
+
+
+
+
+
+
+        
+
+    <!--================= 
+    Primary footer
+    =====================---->
+        <footer class="primary-footer clearfix" >
+            <small>&copy;UFidelit&aacute;s</small>
+            <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+            <nav>
+            </nav>
+        </footer>
+
+    </body>
+</html>

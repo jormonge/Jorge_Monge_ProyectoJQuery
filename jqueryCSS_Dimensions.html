@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jquery Course - SoloLearn</title> 
+        <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+        <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+            <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+            
+            <script src="assets/javascript/main.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/javascript/test.js"></script>
+            <script src="assets/javascript/main.js"></script>
+
+    </head>
+
+    <body>
+        <!-- ===================
+        Primary header
+        ========================   ---->
+        <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/jQuery/" target="_blank">👉 Here.</a></h3>
+
+            <h3 style="position: absolute; right: 100px; top: 23px ">
+                Julio 24 &mdash; 2019; San José, C.R
+            </h3>
+        
+            <div class="navIcon" onclick="releaseNav()" >
+            <p>&equiv; </p> 
+            </div>
+
+            <nav class="fixSideNav" id="navIcon">
+                    <ul>
+                        <li>
+                        JavaScript
+                        <ul style="text-align: center">
+                            <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                            <li><a href="classes.html">Classes in ES6</a></li>
+                            <li><a href="mapSet.html">Map & Set</a></li>
+                            <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                            <li><a href="moreE6-2.html">Modules</a></li>
+                            
+                        </ul> 
+    
+                        </li>
+                        <li>
+                            JQuery
+                            <ul style="text-align: center">
+                                <li><a href="jquery.html">Overview</a></li>
+                                <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                                <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                                <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                                <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                                <li><a href="jqueryDOM.html">The DOM</a></li>
+                                <li><a href="jqueryEvents.html">Handling Events</a></li>
+                                <li><a href="jqueryEffects.html">Effects</a></li>
+                                <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </nav>
+
+        </header>
+
+        <br><br>
+
+        <!-- =================
+        Contenido Principal
+        ======================   ---->
+
+
+        <section class="container"> <!-- == Full Promises Section == -->
+
+            <h3>JQuery Manipulating Dimensions</h3> 
+            <h3>learn.shayhowe info<a href="https://learn.shayhowe.com/advanced-html-css/jquery/#jquery" target="_blank">👉 Here.</a></h3>
+
+        
+            <div class="container">  <!-- == Dimensions Section == -->
+            
+                <h2>Dimensions</h2>
+        
+                <p>
+                    The <span class="spamtext">width()</span> and <span class="spamtext">height()</span> methods can be used to get and set the width and height of HTML elements.
+                    <br><br>
+                    Let's set both the width and height of a div to 100px, as well as set a background color for it:
+                    <br><br> 
+                    <b>For Example</b>
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.4">
+                                $("div").css("background-color", "red");<br> 
+                                $("div").width(100);<br> 
+                                $("div").height(100);<br>                          
+                        </pre>
+                    </code> 
+
+                    <button id="buttonEx3">
+                        Click for "img" Element <br>
+                        dimension's change
+                    </button>
+
+                </p>
+
+                <img src="assets/img/Pikachu-256.png" style="margin: 2px 40% 25px 40%" id="imgExample">
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+                            
+                        
+                    <script >
+                            $(function() {
+                                $("#buttonEx3")
+                                .click(function(){
+                                    $("#imgExample").css("background-color", "red");
+                                    $("#imgExample").width(100);  // noticed there is no need to set the px ..
+                                    $("#imgExample").height(100);
+                                    }
+                                )                        
+                            }); 
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+
+            </div> <!-- == End of Dimensions Section == -->
+
+
+            <hr>
+
+            <div class="container">  <!-- == Dimensions 2 Section == -->
+            
+                <h2>Further Dimensions methods</h2>
+        
+                <p>
+                    The <span class="spamtext">width()</span> and <span class="spamtext">height()</span> methods get and set the dimensions without the padding, borders and margins.
+                    <br><br>
+                    The <span class="spamtext">innerWidth()</span> and <span class="spamtext">innerHeight()</span> methods also include the padding.
+                    <br><br>
+                    <b>innerWidth</b>= padding + width + padding
+                    <br><br>
+                    The <span class="spamtext">outerWidth()</span> and <span class="spamtext">outerHeight()</span> methods include the padding and borders.
+                    <br><br>
+                    <b>outerWidth</b>= border + padding + width + padding + border 
+                    <br><br>
+                    <span class="spamtext">[<span class="spamtext2">Margin is not included on any of them, so it does not alter its width or height</span>]</span>
+                    <br><br>
+                    Check out this image to understand how they work:
+                    <br><br>
+                </p>
+
+                <img src="assets/img/DimensionsMethodsBoxModel.JPG">
+                <br><br>
+                <p>
+                    <b>The following example demonstrates how the methods work:</b>
+                    <br><br>
+                    <b>HTML:</b> 
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.4">
+                    &#8249;div>&#8249;/div>                
+                        </pre>
+                    </code>
+                    <b>CSS:</b> 
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                    div {<br>
+                        width: 300px;<br>
+                        height: 100px;<br>
+                        padding: 10px;<br>
+                        margin: 20px;<br>
+                        border: 3px solid blue;<br>
+                        background-color: red;<br>
+                        color: white;<br>
+                    }<br>             
+                        </pre>
+                    </code> 
+                    <b>JS:</b>
+                    <br><br> 
+                    <code>
+                        <pre style="line-height: 0.8">
+                    $(function() {<br>
+                        var txt = "";<br>
+                        txt += "width: " + $("div").width() + " ";<br>
+                        txt += "height: " + $("div").height() + "&#8249;br/>";<br>
+                        txt += "innerWidth: " + $("div").innerWidth() + "  ";<br>
+                        txt += "innerHeight: " + $("div").innerHeight() + "&#8249;br/>";<br>
+                        txt += "outerWidth: " + $("div").outerWidth() + "  ";<br>
+                        txt += "outerHeight: " + $("div").outerHeight();<br>
+                        $("div").html(txt);<br>
+                    });                
+                        </pre>
+                    </code> 
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px;">
+                    
+                    <div id="divprueba4">Este es el &#8249;div> de prueba</div>
+
+                    <style>
+                        #divprueba4 {
+                                width: 300px;
+                                height: 100px;
+                                padding: 10px;
+                                margin: 20px;
+                                border: 3px solid blue;
+                                background-color: red;
+                                color: white;
+                                overflow: scroll;
+                            }
+                    </style>
+    
+                    <script >
+                            $(function() {
+                                var txt = "";
+                                txt += "width: " + $("#divprueba4").width() + "<br/>";
+                                txt += "height: " + $("#divprueba4").height() + "<br/>";
+                                txt += "innerWidth: " + $("#divprueba4").innerWidth() + "  ";
+                                txt += "innerHeight: " + $("#divprueba4").innerHeight() + "<br/>";
+                                txt += "outerWidth: " + $("#divprueba4").outerWidth() + "  ";
+                                txt += "outerHeight: " + $("#divprueba4").outerHeight();                    
+                                $("#divprueba4").html(txt);
+                            });
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+
+                <div class="notificationBox" style="text-align: center">
+
+                    <p>
+                        By running the code we noticed only the outerWidth() and outerHeight() methods return the actual set value.
+                        <br><br>
+                        But this is only because we are using the CSS border box property<br>
+                        box-sizing: border-box;
+                        <br><br>
+                        Without modifying it, the standard box-sizing method is content-box- in which the actual height and width are provided by the with() and height() methods.<br>  
+                        box-sizing: content-box<br>
+                    </p>
+
+
+                
+                </div>
+
+            </div> <!-- == End of Dimensions 2 Section == -->
+
+        </section>  
+
+
+
+
+
+
+        
+
+    <!--================= 
+    Primary footer
+    =====================---->
+        <footer class="primary-footer clearfix" >
+            <small>&copy;UFidelit&aacute;s</small>
+            <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+            <nav>
+            </nav>
+        </footer>
+
+    </body>
+</html>

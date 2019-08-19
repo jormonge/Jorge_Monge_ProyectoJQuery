@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jquery Course - SoloLearn</title> 
+        <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+        <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+            <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+            
+            <script src="assets/javascript/main.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/javascript/test.js"></script>
+            <script src="assets/javascript/main.js"></script>
+
+    </head>
+
+    <body>
+        <!-- ===================
+        Primary header
+        ========================   ---->
+        <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/jQuery/" target="_blank">👉 Here.</a></h3>
+
+            <h3 style="position: absolute; right: 100px; top: 23px ">
+                Julio 24 &mdash; 2019; San José, C.R
+            </h3>
+        
+            <div class="navIcon" onclick="releaseNav()" >
+            <p>&equiv; </p> 
+            </div>
+
+            <nav class="fixSideNav" id="navIcon">
+                    <ul>
+                        <li>
+                        JavaScript
+                        <ul style="text-align: center">
+                            <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                            <li><a href="classes.html">Classes in ES6</a></li>
+                            <li><a href="mapSet.html">Map & Set</a></li>
+                            <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                            <li><a href="moreE6-2.html">Modules</a></li>
+                            
+                        </ul> 
+    
+                        </li>
+                        <li>
+                            JQuery
+                            <ul style="text-align: center">
+                                <li><a href="jquery.html">Overview</a></li>
+                                <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                                <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                                <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                                <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                                <li><a href="jqueryDOM.html">The DOM</a></li>
+                                <li><a href="jqueryEvents.html">Handling Events</a></li>
+                                <li><a href="jqueryEffects.html">Effects</a></li>
+                                <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </nav>
+
+        </header>
+
+        <br><br>
+
+        <!-- =================
+        Contenido Principal
+        ======================   ---->
+
+
+        <section class="container"> <!-- == Full Promises Section == -->
+
+            <h3>JQuery Adding & Removing Classes</h3> 
+            <h3>learn.shayhowe info<a href="https://learn.shayhowe.com/advanced-html-css/jquery/#jquery" target="_blank">👉 Here.</a></h3>
+
+        
+            <div class="container">  <!-- == CSS Properties Section == -->
+            
+                <h2>CSS Properties</h2>
+        
+                <p>
+                    Similar to the <span class="spamtext">html()</span> method, the <span class="spamtext">css()</span> method can be used to get and set CSS property values.
+                    <br><br>
+                    <b>For Example</b>
+                    <br><br>
+                    <b>HTML:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+                            &#8249;p>Some text&#8249;/p>                               
+                        </pre>
+                    </code> 
+
+                    <b>CSS: </b>
+                    <code>
+                        <pre style="line-height: 0.4">
+                                p {<br>
+                                    background-color:red;<br>
+                                    color: white;<br>
+                                }<br>                
+                        </pre>
+                    </code> 
+
+                    <br><br>
+                    <b>JS:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+                                $(function() {<br>
+                                    alert($("p").css("background-color"));<br>
+                                    $("p").css("background-color", "blue");<br>
+                                });<br>
+                        </pre>
+                    </code> 
+                    <br>
+
+                    <button id="buttonEx2">Click for CSS properties change</button>
+
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        <p id="pExample2" class="pExample2">Some text</p>
+                        <style>                       
+                            .pExample2 {
+                                background-color:red;
+                                color: white;
+                                }
+                        </style>
+                            
+                        
+                    <script >
+                            $(function() {
+                                $("#buttonEx2")
+                                .click(function(){
+                                        alert($("#pExample2").css("background-color"));
+                                        $("#pExample2").css("background-color", "blue");
+                                    }
+                                )                        
+                            }); 
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+
+                <div class="notificationBox">
+
+                    <p> The code above alerts the background-color property of the paragraph and then sets it to blue.</p>
+                
+                </div>
+            </div> <!-- == End of CSS Properties Section == -->
+
+
+            <hr>
+
+            <div class="container">  <!-- == Multiple Properties Section == -->
+            
+                <h2>Multiple Properties</h2>
+        
+                <p>
+                    To set multiple CSS properties, the <span class="spamtext">css()</span> method uses <span class="spamtext">JSON</span> syntax, which is: 
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.4">
+                                css({"property":"value","property":"value",...});                
+                        </pre>
+                    </code> 
+                    <br><br>
+                    As you can see, the syntax consists of <b>"property":"value"</b> pairs, which are comma separated and enclosed in curly brackets { }.
+                    <br><br>
+                    <b>For Example:</b>
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.4">
+
+                                $("p").css({"color": "red", "font-size": "200%"});                          
+                        </pre>
+                    </code> 
+                
+                    <br><br>
+                    
+                </p>
+
+
+
+                <div class="notificationBox" style="text-align: center">
+
+                    <p>
+                        You can specify any number of properties using this 
+                        <span class="tooltip" style="color: black ; font-weight: 900" >JSON
+                            <span class="tooltiptext">
+                            A format for storing and transforming data.
+                            </span>
+                        </span> 
+                        syntax.
+                    </p>
+
+
+                
+                </div>
+
+            </div> <!-- == End of toggleClass() Section == -->
+
+        </section>  
+
+
+
+
+
+
+        
+
+    <!--================= 
+    Primary footer
+    =====================---->
+        <footer class="primary-footer clearfix" >
+            <small>&copy;UFidelit&aacute;s</small>
+            <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+            <nav>
+            </nav>
+        </footer>
+
+    </body>
+</html>

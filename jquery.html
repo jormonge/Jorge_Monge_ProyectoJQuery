@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jquery Course - SoloLearn</title> 
+        <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+        <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+            <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+            
+            <script src="assets/javascript/main.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/javascript/test.js"></script>
+            <script src="assets/javascript/main.js"></script>
+  
+    </head>
+
+  <body>
+  	<!-- ===================
+      Primary header
+    ========================   ---->
+    <header class="primary-header clearfix menu" >
+
+        <h1 class="logo">SoloLearn JavaScript Course</h1> 
+        <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+        <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/jQuery/" target="_blank">👉 Here.</a></h3>
+
+      <h3 style="position: absolute; right: 100px; top: 23px ">
+        Julio 24 &mdash; 2019; San José, C.R
+      </h3>
+      
+      <div class="navIcon" onclick="releaseNav()" >
+      <p>&equiv; </p> 
+      </div>
+
+      <nav class="fixSideNav" id="navIcon">
+          <ul>
+              <li>
+              JavaScript
+              <ul style="text-align: center">
+                  <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                  <li><a href="classes.html">Classes in ES6</a></li>
+                  <li><a href="mapSet.html">Map & Set</a></li>
+                  <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                  <li><a href="moreE6-2.html">Modules</a></li>
+                  
+              </ul> 
+
+              </li>
+              <li>
+                  JQuery
+                  <ul style="text-align: center">
+                      <li><a href="jquery.html">Overview</a></li>
+                      <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                      <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                      <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                      <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                      <li><a href="jqueryDOM.html">The DOM</a></li>
+                      <li><a href="jqueryEvents.html">Handling Events</a></li>
+                      <li><a href="jqueryEffects.html">Effects</a></li>
+                      <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </nav>
+
+
+    </header>
+    <br><br>
+
+<!-- =================
+  Contenido Principal
+======================   ---->
+
+
+    <section class="container"> <!-- == Full Promises Section == -->
+
+      <h3>JQuery Overview</h3> 
+      <h3>learn.shayhowe info<a href="https://learn.shayhowe.com/advanced-html-css/jquery/#jquery" target="_blank">👉 Here.</a></h3>
+
+    
+      <div class="container">  <!-- == Getting Started Section == -->
+      
+        <h2>Getting Started</h2>
+  
+        <p>
+            It is a good practice to wait for the HTML document to be fully loaded and ready before working with it.
+            <br><br>
+            For that we use the ready event of the document object:
+            <br><br>
+  
+            <code>
+                <pre style="line-height: 0.4">
+  
+                    $(document).ready(function() { <br>
+                        // jQuery code goes here<br>
+                        });<br>
+                        
+                </pre>
+            </code> 
+  
+            <br><br>
+            
+            The $ is used to access jQuery. From here, the code accesses the document object and defines a function to be called when the document's ready event is fired.
+            <br><br>
+            This prevents any jQuery code from running before the document is finished loading.
+            Since the code above is used in almost all cases when using jQuery, there is a handy shortcut for writing it:
+            <br><br>
+  
+            <code>
+                <pre style="line-height: 0.4">
+  
+                    $(function() {<br>
+                        // jQuery code goes here<br>
+                        });<br>
+                        
+                </pre>
+            </code> 
+            <br><br>
+            This code performs the same task as the longer code above.
+    
+        </p>
+  
+        <br><br> <br> 
+  
+        <div class="notificationBox">
+  
+            <p> If the jQuery syntax seems a little confusing, don't worry, we will cover it in detail. </p>
+        
+        </div>
+      </div> <!-- == End of Getting Started Section == -->
+      
+      <hr>
+
+      <div class="container">  <!-- == Syntax Section == -->
+        
+        <h2>Syntax</h2>
+
+        <p>
+          Query is used to select (query) HTML elements and perform "actions" on them.
+          <br><br>
+          Basic syntax is: $("selector").action()
+          <br><br>
+          - The $ accesses jQuery.<br>
+          - The (selector) finds HTML elements.<br>
+          - The action() is then performed on the element(s).<br>
+            <br><br>
+            <b>For example:</b>
+            <br><br>
+
+
+            <code>
+                <pre style="line-height: 0.4">
+
+                  $("p").hide()  // hides all &#8249;p&#8250;  <br>
+                    $(".demo").hide()  // hides all elements with class="demo"<br>
+                    $("#demo").hide()  // hides the element with id="demo"<br>
+                        
+                </pre>
+            </code> 
+
+            <br><br>         
+            Looking back at the code from our previous example:
+            <br><br>
+
+            <code>
+                <pre style="line-height: 0.4">
+
+                  $("#start").html("Go!");
+                        
+                </pre>
+            </code> 
+            <br><br>
+            This selects the element with the id="start" and calls the html() method for it.
+            <br><br>
+            <span class="spamtext">The html() method</span> is used to change the HTML content of an element.
+    
+        </p>
+
+        <br><br> <br> 
+
+        <div class="notificationBox">
+
+            <p>If you have used CSS before, you will notice that jQuery uses CSS syntax to select elements. </p>
+        
+        </div>
+      </div> <!-- == End of Syntax Section == -->
+
+      <div class="container">  <!-- == Selectors Section == -->
+        
+        <h2>Selectors</h2>
+
+        <p>
+          You can also use the following syntax for selectors: 
+          <br><br>
+
+            <code>
+                <pre style="line-height: 0.4">
+
+                    $("div.menu")  // all &#8249;div&#8250; elements with class="menu" <br>
+
+                        $("p:first")  // the first &#8249;p&#8250; element <br>
+                        
+                        $("h1, p") // all &#8249;h1&#8250; and all &#8249;p&#8250; elements<br>
+                        
+                        $("div p") // all &#8249;p&#8250; elements that are descendants of a &#8249;div&#8250; element <br>
+                        
+                        $("*")  // all elements of the DOM<br>
+                        
+                </pre>
+            </code> 
+
+            <br><br>         
+            Looking back at the code from our previous example:
+            <br><br>
+
+            <code>
+                <pre style="line-height: 0.4">
+
+                  $("#start").html("Go!");
+                        
+                </pre>
+            </code> 
+            <br><br>
+            This selects the element with the id="start" and calls the html() method for it.
+            <br><br>
+            <span class="spamtext">The html() method</span> is used to change the HTML content of an element.
+    
+        </p>
+
+        <br><br> <br> 
+
+        <div class="notificationBox">
+
+            <p>If you have used CSS before, you will notice that jQuery uses CSS syntax to select elements. </p>
+        
+        </div>
+      </div> <!-- == End of Selectors Section == -->
+
+      <div class="container">  <!-- == Useful Selectors Section == -->
+        
+        <h2>Useful Selectors</h2>
+
+          <table>
+
+            <thead>
+              <th>Selector</th>
+              <th>Sample</th>
+              <th>Description</th>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>*</td>
+                <td>$("*")</td>
+                <td>all elements</td>
+              </tr>
+
+              <tr>
+                <td>#id</td>
+                <td>$("#div")</td>
+                <td>all elements with id= "div" </td>
+              </tr>
+
+              <tr>
+                <td>.class</td>
+                <td>$(".div")</td>
+                <td>all elements with class= "div" </td>
+              </tr>
+
+              <tr>
+                <td>element</td>
+                <td>$("p")</td>
+                <td>all &#8249;p&#8250; elements</td>
+              </tr>
+
+              <tr>
+                <td>elmt 1, elmt 2, elmt 3 </td>
+                <td>$("h1,h2,h3")</td>
+                <td>all &#8249;h1&#8250;,&#8249;h2&#8250;,&#8249;h3&#8250; elements</td>
+              </tr>
+
+              <tr>
+                <td>:first</td>
+                <td>$("h1:first")</td>
+                <td>firts &#8249;h1&#8250; element</td>
+              </tr>
+
+              <tr>
+                <td>:last</td>
+                <td>$("h1:last")</td>
+                <td>last &#8249;h1&#8250; element</td>
+              </tr>
+
+              <tr>
+                <td>:first-child</td>
+                <td>$("b:first-child")</td>
+                <td>all &#8249;b&#8250; elements that are the firt child of their parent</td>
+              </tr>
+
+              <tr>
+                <td>:last-child</td>
+                <td>$("b:last-child")</td>
+                <td>all &#8249;b&#8250; elements that are the last child of their parent</td>
+              </tr>
+
+              <tr>
+                <td>:nth-child()</td>
+                <td>$("div:nth-child(2)")</td>
+                <td>all &#8249;div&#8250; elements that are the 2nd child of their parent</td>
+              </tr>
+
+              <tr>
+                <td>parent > child </td>
+                <td>$("div > p")</td>
+                <td>all &#8249;p&#8250; elements that are a <span class="spamtext">direct child</span>  of a &#8249;div&#8250; element </td>
+              </tr>
+
+              <tr>
+                <td>parent descendants </td>
+                <td>$("span p")</td>
+                <td>all &#8249;p&#8250; elements that are <span class="spamtext">descendants</span>  of a &#8249;span&#8250; element </td>
+              </tr>
+
+              <tr>
+                <td>:eq(index)</td>
+                <td>$("ul li:eq(2)")</td>
+                <td> the third element in a list (index starts at 0) </td>
+              </tr>
+
+              <tr>
+                <td>:contains(text)</td>
+                <td>$(":contains('solo'))</td>
+                <td> all elements which contains the text 'solo' </td>
+              </tr>
+
+              <tr>
+                <td>[attribute]</td>
+                <td>$("[src])</td>
+                <td> all elements with a src attribute</td>
+              </tr>
+
+              <tr>
+                <td>:input</td>
+                <td>$(:input)</td>
+                <td> all input elements </td>
+              </tr>
+
+              <tr>
+                <td>:text</td>
+                <td>$(:text)</td>
+                <td> all input elements with type = "text"</td>
+              </tr>
+
+            </tbody>
+            
+
+          </table>
+        <br><br> <br> 
+
+        <div class="notificationBox">
+
+            <p style="text-align: center">Don't try to remember all this, just know that they exist.
+              <br> 
+              You can reread this when you need to know more.
+            </p>
+        
+        </div>
+      </div> <!-- == End of Useful Selectors Section == -->
+
+
+    </section>  
+
+
+
+     
+
+
+
+
+<!--================= 
+  Primary footer
+=====================---->
+<footer class="primary-footer clearfix" >
+  	    <small>&copy;UFidelit&aacute;s</small>
+        <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+      <nav>
+      </nav>
+</footer>
+
+  </body>
+</html>

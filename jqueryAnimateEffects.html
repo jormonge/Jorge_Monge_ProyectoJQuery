@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jquery Course - SoloLearn</title> 
+        <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+        <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+            <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+            
+            <script src="assets/javascript/main.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/javascript/test.js"></script>
+            <script src="assets/javascript/main.js"></script>
+
+    </head>
+
+    <body>
+        <!-- ===================
+        Primary header
+        ========================   ---->
+        <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/jQuery/" target="_blank">👉 Here.</a></h3>
+
+            <h3 style="position: absolute; right: 100px; top: 23px ">
+                Julio 24 &mdash; 2019; San José, C.R
+            </h3>
+        
+            <div class="navIcon" onclick="releaseNav()" >
+            <p>&equiv; </p> 
+            </div>
+
+            <nav class="fixSideNav" id="navIcon">
+                <ul>
+                    <li>
+                    JavaScript
+                    <ul style="text-align: center">
+                        <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                        <li><a href="classes.html">Classes in ES6</a></li>
+                        <li><a href="mapSet.html">Map & Set</a></li>
+                        <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                        <li><a href="moreE6-2.html">Modules</a></li>
+                        
+                    </ul> 
+
+                    </li>
+                    <li>
+                        JQuery
+                        <ul style="text-align: center">
+                            <li><a href="jquery.html">Overview</a></li>
+                            <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                            <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                            <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                            <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                            <li><a href="jqueryDOM.html">The DOM</a></li>
+                            <li><a href="jqueryEvents.html">Handling Events</a></li>
+                            <li><a href="jqueryEffects.html">Effects</a></li>
+                            <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <br><br>
+
+        <!-- =================
+        Contenido Principal
+        ======================   ---->
+
+
+        <section class="container"> <!-- == Full Promises Section == -->
+
+            <h3>
+                JQuery Effects
+                <br>
+                Hide/Show, Fade, Slide
+            </h3> 
+            <h3>learn.shayhowe info<a href="https://learn.shayhowe.com/advanced-html-css/jquery/#jquery" target="_blank">👉 Here.</a></h3>
+
+        
+            <div class="container">  <!-- == animate Effects Section == -->
+            
+                <h2>animate()</h2>
+        
+                <p>
+
+                        The <span class="spamtext">animate()</span> method lets you animate to a set value, or to a value relative to the current value.
+                        <br><br>
+                        You need to define the CSS properties to be animated as its parameter in JSON format 
+                    <br><br>
+                    ("key":"value" pairs).
+                    <br><br>
+                    The second parameter defines the speed of the animation
+                    <br><br>
+                    For example, the following code animates the width property of the div in 1 second to the value 250px
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                $("div").click(function() {<br>
+                    $("div").animate({width: '250px'}, 1000);<br>
+                    });<br>
+                        </pre>
+                    </code>
+                    <br><br>
+
+                        <button id="buttonAnimate">Presiona para Animate the Div</button>
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        
+                        <div id="pruebaAnimateDiv">Esto es un Div de prueba</div>
+                            
+                        
+                    <script>
+                        $("#buttonAnimate").click(function() {
+                            $("#pruebaAnimateDiv").animate({width: '250px'}, 1000);
+                            });
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+                <br>
+
+            </div> <!-- == End of animate Effects Section == -->
+            <hr>
+            <div class="container">  <!-- == Fade In/Out Effects Section == -->
+            
+                <h2>Fade In/Out</h2>
+        
+                <p>
+
+                    Similar to the hide/show methods, jQuery provides the <span class="spamtext2">fadeIn/fadeOut</span> methods, which fade an element in and out of visibility. 
+                    <br><br>
+                    Just like the <span class="spamtext">toggle()</span> method switches between hiding and showing, the <span class="spamtext">fadeToggle()</span> method fades in and out.
+                    <br><br>
+                    Let's see <span class="spamtext">fadeToggle()</span> in action: 
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                $(function() {<br>
+                    $("p").click(function() {<br>
+                        $("div").fadeToggle(1000);<br>
+                    });<br>
+                    });<br>
+                        </pre>
+                    </code>
+                    <br><br>
+
+                    Just like <span class="spamtext">toggle()</span>, <span class="spamtext">fadeToggle()</span>  takes two optional parameters: <span class="spamtext2">speed</span> and <span class="spamtext2">callback</span>. 
+                    <br><br>
+                        <button id="buttonFadeToggle">Presiona para fadeToggle the Div</button>
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        
+                        <div id="pruebaFadeToggleDiv">Esto es un Div de prueba:</div>
+                            
+                        
+                    <script>
+                        $(function() {
+                            $("#buttonFadeToggle").click(function() {
+                                $("#pruebaFadeToggleDiv").fadeToggle(1000);
+                            });
+                        });
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+                <br>
+                <div class="notificationBox" style="text-align: center">
+
+                        <p>
+                                Another method used for fading is <span class="spamtext2">fadeTo()</span>, which allows fading to a given opacity (value between 0 and 1). For example: $("div").fadeTo(1500, 0.7);
+                        </p>      
+                </div>
+
+                <button id="buttonfadeTo">Presiona para fadeTo the Div</button>
+                <br><br>
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+            
+                        <div id="pruebaFadeToDiv">Esto es un Div de prueba</div>
+                            
+                        
+                    <script>
+                        $(function() {
+                            $("#buttonfadeTo").click(function() {
+                                $("#pruebaFadeToDiv").fadeTo(1500, 0.1);
+                            });
+                        });
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+
+            </div> <!-- == End of Fade In/Out Effects Section == -->
+            <hr>
+            <div class="container">  <!-- == Slide Up/Down Effects Section == -->
+            
+                <h2>Slide Up/Down</h2>
+        
+                <p>
+
+                    The <span class="spamtext">slideUp()</span> and <span class="spamtext">slideDown()</span> methods are used to create a sliding effect on elements.
+                    <br><br>
+                    Again, similar to the previous toggle methods, the <span class="spamtext">slideToggle()</span> method switches between the sliding effects and can take two optional parameters: speed and callback.
+                    <br><br>
+                    <b>For example:</b> 
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.8">
+                $(function() {<br>
+                    $("p").click(function() {<br>
+                        $("div").slideToggle(500);<br>
+                    });<br>
+                    });<br>
+                        </pre>
+                    </code>
+                    <br><br>
+
+
+                        <button id="buttonslideToggle">Presiona para slideToggle the Div</button>
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        
+                        <div id="pruebaslideToggleDiv">Esto es un Div de prueba</div>
+                            
+                        
+                    <script>
+                        $(function() {
+                            $("#buttonslideToggle").click(function() {
+                                $("#pruebaslideToggleDiv").slideToggle(1000);
+                            });
+                        });
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+                <br>
+
+            </div> <!-- == End of Fade In/Out Effects Section == -->
+
+        </section>  
+
+
+
+
+
+
+        
+
+    <!--================= 
+    Primary footer
+    =====================---->
+        <footer class="primary-footer clearfix" >
+            <small>&copy;UFidelit&aacute;s</small>
+            <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+            <nav>
+            </nav>
+        </footer>
+
+    </body>
+</html>

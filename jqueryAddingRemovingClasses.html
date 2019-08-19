@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jquery Course - SoloLearn</title> 
+        <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+        <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+            <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+            
+            <script src="assets/javascript/main.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/javascript/test.js"></script>
+            <script src="assets/javascript/main.js"></script>
+
+    </head>
+
+    <body>
+        <!-- ===================
+        Primary header
+        ========================   ---->
+        <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/jQuery/" target="_blank">👉 Here.</a></h3>
+
+            <h3 style="position: absolute; right: 100px; top: 23px ">
+                Julio 24 &mdash; 2019; San José, C.R
+            </h3>
+        
+            <div class="navIcon" onclick="releaseNav()" >
+            <p>&equiv; </p> 
+            </div>
+
+            <nav class="fixSideNav" id="navIcon">
+                    <ul>
+                        <li>
+                        JavaScript
+                        <ul style="text-align: center">
+                            <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                            <li><a href="classes.html">Classes in ES6</a></li>
+                            <li><a href="mapSet.html">Map & Set</a></li>
+                            <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                            <li><a href="moreE6-2.html">Modules</a></li>
+                            
+                        </ul> 
+    
+                        </li>
+                        <li>
+                            JQuery
+                            <ul style="text-align: center">
+                                <li><a href="jquery.html">Overview</a></li>
+                                <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                                <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                                <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                                <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                                <li><a href="jqueryDOM.html">The DOM</a></li>
+                                <li><a href="jqueryEvents.html">Handling Events</a></li>
+                                <li><a href="jqueryEffects.html">Effects</a></li>
+                                <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </nav>
+            
+        </header>
+
+        <br><br>
+
+        <!-- =================
+        Contenido Principal
+        ======================   ---->
+
+
+        <section class="container"> <!-- == Full Promises Section == -->
+
+            <h3>JQuery Adding & Removing Classes</h3> 
+            <h3>learn.shayhowe info<a href="https://learn.shayhowe.com/advanced-html-css/jquery/#jquery" target="_blank">👉 Here.</a></h3>
+
+        
+            <div class="container">  <!-- == Manipulating CSS Section == -->
+            
+                <h2>Manipulating CSS</h2>
+        
+                <p>
+                    jQuery has several methods for CSS manipulation.
+                    <br><br>
+                    The addClass( ) method adds one or more classes to the selected elements.
+                    <br><br>
+                    <b>For Example</b>
+                    <br><br>
+                    <b>HTML:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+
+                            &#8249;div>Some text&#8249;/div><br>
+                                
+                        </pre>
+                    </code> 
+
+                    <b>CSS: </b>
+                    <code>
+                        <pre style="line-height: 0.4">
+
+                            .header {<br>
+                                color: blue;<br>
+                                font-size:x-large;<br>
+                            }<br>
+                                
+                        </pre>
+                    </code> 
+
+                    <br><br>
+                    <b>JS:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+
+                            $("div").addClass("header");
+                        </pre>
+                    </code> 
+                    <br>
+                    The above code assigns to the div element the class "header".
+                </p>
+
+                <div class="notificationBox">
+
+                    <p> To specify multiple classes within the addClass() method, just separate them using spaces. For example, $("div").addClass("class1 class2 class3").</p>
+                
+                </div>
+            </div> <!-- == End of Manipulating CSS Section == -->
+
+            <div class="container">  <!-- == Manipulating CSS-2 Section == -->
+            
+                <h2>Remove Classes</h2>
+        
+                <p>
+                    The <b>removeClass()</b> method removes one or more class names from the selected elements.
+                    <br><br>
+                    <b>For Example</b>
+                    <br><br>    
+                    <b>JS:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+                            $("div").removeClass("red");
+                        </pre>
+                    </code> 
+                    <br>
+                    The code above removes the class "red" from the div element.
+                </p>
+
+                <div class="notificationBox">
+
+                    <p> ToAgain, multiple class names can be specified by separating them using spaces.</p>
+                
+                </div>
+            </div> <!-- == End of Manipulating CSS Section == -->
+
+            <hr>
+
+            <div class="container">  <!-- == toggleClass()Section == -->
+            
+                <h2>toggleClass()</h2>
+        
+                <p>
+                    The <span class="spamtext">toggleClass()</span> method toggles between adding/removing classes from the selected elements, meaning that if the specified class exists for the element, it is removed, and if it does not exist, it is added.
+                    <br><br>
+                    <b>HTML:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+                            &#8249;p>Some text&#8249;/p><br>
+                            &#8249;button>Toggle Class&#8249;/button><br>                 
+                        </pre>
+                    </code> 
+
+                    <b>CSS: </b>
+                    <code>
+                        <pre style="line-height: 0.4">
+                            .red { <br>
+                                color:red; <br>
+                                font-weight: bold;<br>
+                            }<br>                          
+                        </pre>
+                    </code> 
+
+                    <br><br>
+                    <b>JS:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+
+                            $(function() {<br>
+                                $("button").click(function() {<br>
+                                    $("p").toggleClass("red");<br>
+                                });<br>
+                            });<br>
+                        </pre>
+                    </code> 
+                    <br>
+                    <button>Click for Toggle Class</button>
+                </p>               
+                        <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                        
+                        <p id="pExample">Text changes on every click (Toggle)</p>
+                        
+
+                    <script >
+        
+                        $(function() {
+                            $("button").click(function() {
+                                $("#pExample").toggleClass("red"); // it works to remove and add class
+                            });
+                        });
+
+                    </script>
+
+                </div> <!-- == END Script Section == -->
+
+                <div class="notificationBox">
+
+                    <p>The code above toggles the class name "red" upon clicking the button.</p>
+                
+                </div>
+
+            </div> <!-- == End of toggleClass() Section == -->
+
+        </section>  
+
+
+
+
+
+
+        
+
+    <!--================= 
+    Primary footer
+    =====================---->
+        <footer class="primary-footer clearfix" >
+            <small>&copy;UFidelit&aacute;s</small>
+            <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+            <nav>
+            </nav>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+  	<meta charset="utf-8">
+  	<title>JavaScript Course - SoloLearn</title> 
+    <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+    <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+      <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script src="assets/javascript/main.js"></script>
+    
+  </head>
+
+  <body>
+
+
+
+ 
+
+        <!-- ===================
+          Primary header
+        ========================   ---->
+        <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/JavaScript" target="_blank">👉 Here.</a></h3>
+
+          <h3 style="position: absolute; right: 100px; top: 23px ">
+            Julio 24 &mdash; 2019; San José, C.R
+          </h3>
+          
+          <div class="navIcon" onclick="releaseNav()" >
+          <p>&equiv; </p> 
+          </div>
+
+          <nav class="fixSideNav" id="navIcon">
+              <ul>
+                  <li>
+                  JavaScript
+                  <ul style="text-align: center">
+                      <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                      <li><a href="classes.html">Classes in ES6</a></li>
+                      <li><a href="mapSet.html">Map & Set</a></li>
+                      <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                      <li><a href="moreE6-2.html">Modules</a></li>
+                      
+                  </ul> 
+
+                  </li>
+                  <li>
+                      JQuery
+                      <ul style="text-align: center">
+                          <li><a href="jquery.html">Overview</a></li>
+                          <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                          <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                          <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                          <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                          <li><a href="jqueryDOM.html">The DOM</a></li>
+                          <li><a href="jqueryEvents.html">Handling Events</a></li>
+                          <li><a href="jqueryEffects.html">Effects</a></li>
+                          <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </nav>
+
+
+        </header>
+        
+        <br><br>
+
+    <!-- =================
+      Contenido Principal
+    ======================   ---->
+        <section class="container clearfix"> <!-- == Slidee Section == -->
+          <!--a simple paragraph to introduce our website-->
+          <h3>DOM & Events</h3> 
+
+          <h2>Creating an Image Slider</h2>
+
+          <div>
+            <button onclick="prev()"> Prev </button>
+
+            <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" 
+              width="200px" height="100px"/>
+
+            <button onclick="next()"> Next </button>
+
+          </div>
+      
+        </section> 
+
+        <br><br><hr>
+
+        <section class="container"> <!-- == Full Rest & Spread Section == -->
+
+          <h3> ECMAScript 6<br>Rest & Spread</h3> 
+
+          <h2>ES6 Rest Parameters</h2>
+
+          <div>  <!-- == REST PARAMETER Section == -->
+
+            <p >
+
+                Prior to ES6, if we wanted to pass a variable number of arguments to a function, we could use the arguments object, an array-like object, to access the parameters passed to the function.<br>
+                For example, let's write a function that checks if an array contains all the arguments passed:<br><br>
+                <code>
+                    <pre style="line-height: 0.4">
+                      function containsAll(arr) {<br>
+                        for (let k = 1; k < arguments.length; k++) {<br></arguments.length>
+                          let num = arguments[k];<br>
+                          if (arr.indexOf(num) === -1) {<br>
+                            return false;<br>
+                          }<br>
+                        }<br>
+                        return true;<br>
+                        }<br>
+                        let x = [2, 4, 6, 7];<br>
+                        console.log(c ontainsAll(x, 2, 4, 7));<br>
+                        console.log(containsAll(x, 6, 4, 9));<br>
+                    </pre>
+              </code> 
+            </p>
+            <!-- == Script Section == -->
+            <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                <script >
+                  function containsAll(arr) {
+                    for (let k = 1; k < arguments.length; k++) { // dandole K =1 estamos ignorando el primer argument que es ("x")
+                      let num = arguments[k];
+                      if (arr.indexOf(num) === -1) { // === 	equal value and equal type -- "arr" is the parameter, aca esta buscando el objeto "x", los demas los ignora.. entonces aca es donde hace la comparacion entre el parameter ("x") y los arguments (2,4,7)
+                        return false;
+                      }
+                    }
+                    return true;
+                  }
+                  let x = [2, 4, 6, 7];
+                  document.write(containsAll(x, 2, 4, 7)+"<br>");
+                  document.write(containsAll(x, 6, 4, 9));  
+                  // so, 
+
+        //The indexOf() method returns the position of the first occurrence of a specified value in a string.
+        //This method returns -1 if the value to search for never occurs.
+
+                  /* 
+                  
+                  ====Function parameters are listed inside the              parentheses () in the function definition.
+                    
+                  https://www.w3schools.com/js/js_functions.asp
+
+                      Function arguments are the values received by the function when it is invoked.
+
+                      Inside the function, the arguments (the parameters) behave as local variables.
+
+                      ===
+                      javascripts functions ignores any extra given parameters received by the argument if not defined in the function
+                      ===
+                  
+                === The Arguments Object
+
+                  JavaScript functions have a built-in object called the arguments object.
+
+                  The argument object contains an array of the arguments used when the function was called (invoked).
+
+                  This way you can simply use a function to find (for instance) the highest value in a list of numbers:
+                  Example
+                  x = findMax(1, 123, 500, 115, 44, 88);
+
+                  function findMax() {
+                    var i;
+                    var max = -Infinity;
+                    for (i = 0; i < arguments.length; i++) {
+                      if (arguments[i] > max) {
+                        max = arguments[i];
+                      }
+                    }
+                    return max;
+                  } */
+
+
+                </script>
+
+            </div> <!-- == END Script Section == -->
+
+              <br><br>
+              
+            <p>   <!-- == Actual Usage of Rest Parameter SECTION== -->
+
+                We can pass any number of arguments to the function and access it using the arguments object.
+                <br><br>
+                While this does the job, ES6 provides a more readable syntax to achieve variable number of parameters by using a rest parameter: 
+                <br><br>
+                <code>
+                  <pre style="line-height: 0.4">
+                    function containsAll(arr, ...nums) { <br>
+                      for (let num of nums) { <br>
+                        if (arr.indexOf(num) === -1) { <br>
+                          return false; <br>
+                        } <br>
+                      } <br>
+                      return true; <br>
+                    } <br>
+                  </pre>
+                </code>
+
+            </p> <!-- == Finish Actual Usage = -->
+          <!-- == Script Section == -->
+            <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                <script >
+                  function containsAll2(arr, ...nums) { // the three dots (..."nombre de la variable") es el rest parameter,, este permite que la funcion acepte y trabaje con todos los argumentos dados, aun si no esta definidos como parametros
+                    for ( let data of nums ) {
+                      if ( arr.indexOf(data) === -1 ){
+                        return false;
+                      }   // no hace falta el else, el return termina el loop y la funcion. 
+                    } return true   // es es en caso de que el for lopp de false -- como no hay un else no hace nada y el for no return nada -- por tanto sigue con el siguiente block
+                  } ;
+                    let z = [2, 4, 6, 7];
+                  document.write(containsAll2(z, 2, 4, 4)+"<br>");
+                  document.write(containsAll2(z, 6, 4, 9));
+
+      
+
+
+                </script>
+                
+
+            </div> <!-- == END Script Section == -->
+
+            <br><br>
+
+            <p> <!-- == Rest Parameter ending notes Section == -->
+
+              The ...nums parameter is called a rest parameter. It takes all the "extra" arguments passed to the function. The three dots (...) are called the Spread operator.
+              <br><br>
+              <span style="background-color: tomato; margin: 2px; text-align: center"> Only the last parameter of a function may be marked as a rest parameter. If there are no extra arguments, the rest parameter will simply be an empty array; the rest parameter will never be undefined. </span>
+
+            </p>
+
+                  <!-- == REST PARAMETER Question Section == -->
+            <div>
+              <p>
+                What is the output of the following code?<br>
+                <code>
+                  <pre style="line-height: 0.4">
+                    function magic(...nums) {<br>
+                      let sum = 0;<br>
+                      nums.filter(n => n % 2 == 0).map(el => sum+= el);<br>
+                      return sum;<br>
+                    }<br>
+                    console.log(magic(1, 2, 3, 4, 5, 6));<br>
+                  </pre>
+                </code>
+              </p>
+
+              <!-- == Script Section == -->
+              <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                <script >
+
+                  function magic(...nums) {
+                    let sum = 0;
+                  let newarray = nums.filter(n => n % 2 == 0).map(el => sum+= el);
+                    return  `El new array es: ${newarray}<br>El valor de la suma es : ${sum} `;
+                    // filter esta buscando por los argumentos que sean divisibles por 2
+                    // map toma el array de filter  y 
+                  }
+                  document.write(magic(1, 2, 3, 4, 5, 6));
+
+
+                  /*
+                  JavaScript Array filter() Method
+                  Definition and Usage
+                  https://www.w3schools.com/jsref/jsref_filter.asp
+
+                    The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+
+                    Note: filter() does not execute the function for array elements without values.
+
+                    Note: filter() does not change the original array.
+                  */
+
+                  /*
+                  JavaScript Array map() Method
+                  Definition and Usage
+                  https://www.w3schools.com/jsref/jsref_map.asp
+
+                    The map() method creates a new array with the results of calling a function for every array element.
+
+                    The map() method calls the provided function once for each element in an array, in order.
+
+                    Note: map() does not execute the function for array elements without values.
+
+                    Note: this method does not change the original array.
+
+                    ENTONCES -- basicamente map() toma un array y le aplica una formula a cada elemento del array, devolviendo un array con el resultado aplicado a cada elemento
+                  */
+
+                </script>
+
+              </div>  <!-- == Cierre Script Section == -->
+              
+            </div>  <!-- == Cierre Question Section == -->
+
+          </div> <!-- == END of REST PARAMETER Section == -->
+
+          <br><hr>
+
+          <h2>ES6 The Spread Operator</h2>
+
+          <div>  <!-- == SPREAD OPERATOR Section == -->
+
+            <p >
+                This operator is similar to the Rest Parameter, but it has another purpose when used in objects or arrays or function calls (arguments).
+
+                <h3> Spread in function calls </h3>
+                It is common to pass the elements of an array as arguments to a function. Before ES6, we used the following method:
+                  <br> <br>
+                <code>
+                  <pre style="line-height: 0.4">
+                    function myFunction(w, x, y, z) { <br>
+                      console.log(w + x + y + z);  <br>
+                    }   <br>
+                    var args = [1, 2, 3];  <br>
+                    myFunction.apply(null, args.concat(4));<br>
+                  </pre>
+                </code> 
+            </p>
+            <!-- == Script Section == -->
+            <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                <script >
+
+                  function myFunction(w, x, y, z) {
+                    document.write(w + x + y + z);
+                  }
+                  var args = [1, 2, 3];
+                  myFunction.apply(null, args.concat(4)); 
+                  // null == undefined    --- true 
+                  // sin null, myFunction da como resultado NaN
+
+                  // aply le dice,, !! oye myFunction() !!!-- toma estos arguments ("en formato array") adicionales para tu calculo 
+
+                  // concat() le esta metiendo un elemento mas al array
+
+                  /*
+                    The JavaScript apply() Method
+                    https://www.w3schools.com/JS/js_function_apply.asp
+
+                    Method Reuse:
+                      With the apply() method, you can write a method that can be used on different objects.
+                    The apply() method is similar to the call() method 
+                    ==== basicamente ==
+                    Tanto apply() como call() le agregan a un method o function anterior a ellos mismos los valores o arguments que estos llaman
+                    ==================
+                    The Difference Between call() and apply()
+                      The difference is:
+                        The call() method takes arguments separately.
+                        The apply() method takes arguments as an array.
+                      
+                      The apply() method is very handy if you want to use an array instead of an argument list.
+                  
+                  */
+
+                </script>
+
+            </div> <!-- == END Script Section == -->
+
+              <br><br>
+              
+            <p>   <!-- == Actual Usage of Spread Operator SECTION== -->
+              ES6 provides an easy way to do the example above with spread operators:
+              <br><br>
+                <code>
+                  <pre style="line-height: 0.4">
+                    const myFunction = (w, x, y, z) => { <br>
+                      console.log(w + x + y + z); <br>
+                    }; <br>
+                    let args = [1, 2, 3]; <br>
+                    myFunction(...args, 4);<br>
+                  </pre>
+                </code>
+
+            </p> <!-- == Finish Actual Usage = -->
+          <!-- == Script Section == -->
+            <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                <script >
+
+                  let myFunction2 = (w, x, y, z) => {
+                      document.write(w + x + y + z);
+                    };
+                    var args2 = [1, 2, 3];
+                    myFunction2(...args2, 6);
+      
+                </script>
+                
+
+            </div> <!-- == END Script Section == -->
+
+            <p>   <!-- == Second Actual Usage of Spread Operator SECTION== -->
+              Example:
+              <br><br>
+                <code>
+                  <pre style="line-height: 0.4">
+                    var dateFields = [1970, 0, 1];  // 1 Jan 1970 <br>
+                    var date = new Date(...dateFields);  <br>
+                    console.log(date);  <br>
+                  </pre>
+                </code>
+
+            </p> <!-- == Finish Second Actual Usage = -->
+
+                    <!-- == Script Section == -->
+            <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                <script >
+
+                  var dateFields = [1970, 0, 1];  // 1 Jan 1970  [yy,month,day]
+                  var date = new Date(...dateFields);  //  the new keyword is used (a constructor), (this) is bound to the new object being created. 
+                  //// the Spread Operator (...)  le permite a date tomar los argumentos dentro del array
+                  document.write(date);  
+                  //because of "new" and the function Date() a new object is created called "date"
+      
+                </script>
+                
+
+            </div> <!-- == END Script Section == -->
+            
+
+            <br><br>
+
+            <p> <!-- == Rest Parameter ending notes Section == -->
+
+
+
+            </p>
+
+                  <!-- == REST PARAMETER Question Section == -->
+            <div>
+              <p>
+
+              </p>
+
+              <!-- == Script Section == -->
+              <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                <script >
+
+
+                </script>
+
+              </div>  <!-- == Cierre Script Section == -->
+              
+            </div>  <!-- == Cierre Question Section == -->
+
+          </div> <!-- == END of REST PARAMETER Section == -->
+
+
+        </section> 
+
+  
+
+
+
+
+<!--================= 
+  Primary footer
+=====================---->
+  	 <footer class="primary-footer clearfix" >
+  	    <small>&copy;UFidelit&aacute;s</small>
+        <small><a href="#top">Back to top</a></small>
+      <nav>
+      </nav>
+  	 </footer>
+
+  </body>
+</html>

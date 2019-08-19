@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+  	<meta charset="utf-8">
+  	<title>JavaScript Course - Map & Set</title> 
+    <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+    <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+      <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script src="assets/javascript/main.js"></script>
+    
+  </head>
+
+  <body>
+  	<!-- ===================
+      Primary header
+    ========================   ---->
+    <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/JavaScript" target="_blank">👉 Here.</a></h3>
+
+          <h3 style="position: absolute; right: 100px; top: 23px ">
+            Julio 24 &mdash; 2019; San José, C.R
+          </h3>
+          
+          <div class="navIcon" onclick="releaseNav()" >
+          <p>&equiv; </p> 
+          </div>
+
+        <nav class="fixSideNav" id="navIcon">
+                <ul>
+                    <li>
+                    JavaScript
+                    <ul style="text-align: center">
+                        <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                        <li><a href="classes.html">Classes in ES6</a></li>
+                        <li><a href="mapSet.html">Map & Set</a></li>
+                        <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                        <li><a href="moreE6-2.html">Modules</a></li>
+                        
+                    </ul> 
+
+                    </li>
+                    <li>
+                        JQuery
+                        <ul style="text-align: center">
+                            <li><a href="jquery.html">Overview</a></li>
+                            <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                            <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                            <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                            <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                            <li><a href="jqueryDOM.html">The DOM</a></li>
+                            <li><a href="jqueryEvents.html">Handling Events</a></li>
+                            <li><a href="jqueryEffects.html">Effects</a></li>
+                            <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </nav>
+
+
+        </header>
+    <br><br>
+
+<!-- =================
+  Contenido Principal
+======================   ---->
+
+
+     <section class="container"> <!-- == Full Rest & Spread Section == -->
+
+      <h3> ECMAScript 6<br>ES6 Map & Set</h3> 
+      <h4>MDN Web The Map object<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">👉 Here.</a></h4>
+      <h4>MDN Web Iterators and generators<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators" target="_blank">👉 Here.</a></h4>
+
+      
+
+      <h2>ES6 Map Object</h2>
+
+      <div>  <!-- == Map Section == -->
+
+        <p >
+            A Map object can be used to hold key/value pairs. A key or value in a map can be anything (objects and primitive values).
+            <br><br>
+            The syntax new Map([iterable]) creates a Map object where iterable is an array or any other iterable object whose elements are arrays (with a key/value pair each).
+            <br><br>
+            An Object is similar to Map but there are important differences that make using a Map preferable in certain cases:<br>
+            <ol>
+                <li>
+                    The keys can be any type including functions, objects, and any primitive.
+                </li>
+                <li>
+                    You can get the size of a Map.
+                </li>
+                <li>
+                    You can directly iterate over Map.
+                </li>
+                <li>
+                    Performance of the Map is better in scenarios involving frequent addition and removal of key/value pairs.
+                </li>
+            </ol>
+            <br><br>
+            The size property returns the number of key/value pairs in a map.
+            <br><br>
+            <b>For example:</b>
+            <br><br>
+            <code>
+                <pre style="line-height: 0.5">
+                let map = new Map([['k1', 'v1'], ['k2', 'v2']]);<br><br>
+                console.log(map.size); // 2
+                </pre>
+            </code> 
+        </p>
+        <!-- == Script Section == -->
+        <div style="text-align: center; background-color: violet; font-size: 25px">
+
+            <script >
+ 
+                let map = new Map([['k1', 'v1'], ['k2', 'v2']]);
+
+                document.write(map.size + "<br>" + "map = " +  JSON.stringify(map) + "<br>" + "a Map Object is diferent in that Json cannot show it - it is kind of a mix between an array and an object"); // 2
+
+            </script>
+                    <script>
+                            function showMap(){
+                                if ( document.getElementById("mapObj").style.display === "none" ){
+                                    document.getElementById("mapObj").style.display = "block";
+                                } else {
+                                    document.getElementById("mapObj").style.display = "none"
+                            }
+                            } 
+                
+                        
+                        </script>
+
+        </div> <!-- == END Script Section == -->
+
+
+        <br>
+        
+        <div class="clearfix">
+
+            <button onclick="showMap()">Click for a Map Object</button>
+            <img src="assets/img/mapObject.JPG" style="display: none" id="mapObj">
+            
+        </div>
+        
+
+      </div> <!-- == END of Map Section == -->
+
+      <br>
+
+      <div>  <!-- == Map Methods Section == -->
+
+        <h3>Map Methods</h3>
+
+        <p >
+
+            <ol style="line-height: 1.2">
+                <li>
+                    <b> set&#40;key, value&#41;</b> 
+                       
+                    <pre> Adds a specified key/value pair to the map. If the specified key already exists, value corresponding to it is replaced with the specified value.</pre>
+                </li>
+                <li>
+                    <b> get&#40;key&#41;</b> 
+                       
+                    <pre> Gets the value corresponding to a specified key in the map. If the specified key doesn't exist, undefined is returned.</pre>
+                </li>
+                <li>
+                    <b> has&#40;key&#41;</b> 
+                       
+                    <pre> Returns true if a specified key exists in the map and false otherwise.</pre>
+                </li>
+                <li>
+                    <b> delete&#40;key&#41;</b> 
+                       
+                    <pre> Deletes the key/value pair with a specified key from the map and returns true. Returns false if the element does not exist.</pre>
+                </li>
+                <li>
+                    <b> clear&#40;&#41;</b> 
+                        
+                    <pre> Removes all key/value pairs from map.</pre>
+                </li>
+                <li>
+                    <b> keys&#40;&#41;</b> 
+                        
+                    <pre> Returns an Iterator of keys in the map for each element.</pre>
+                </li>
+                <li>
+                    <b> values&#40;&#41;</b> 
+                        
+                    <pre> Returns an Iterator of values in the map for each element.</pre>
+                </li>   
+                <li>
+                    <b> entries&#40;&#41;</b> 
+                        
+                    <pre> Returns an Iterator of array[key, value] in the map for each element.</pre>
+                </li>                      
+            </ol>
+            <br><br>
+            <b>For example:</b>
+            <br><br>
+            <code>
+                <pre style="line-height: 0.5">
+                    let map = new Map(); <br>
+                    map.set('k1', 'v1').set('k2', 'v2');<br>
+                    console.log(map.get('k1')); // v1<br>
+                    console.log(map.has('k2')); // true<br>
+                    for (let kv of map.entries())<br>
+                      console.log(kv[0] + " : " + kv[1]);<br>
+                </pre>
+            </code> 
+        </p>
+        <!-- == Script Section == -->
+        <div style="text-align: center; background-color: violet; font-size: 25px">
+
+            <script >
+
+                let map2 = new Map();
+ 
+                map2.set('k1', 'v1').set('k2', 'v2'); // add key and values
+
+                document.write(map2.get('k1') + "<br>"); // calls the value of the given key
+
+                document.write(map2.has('k2')+ "<br>"); //  Returns true if a specified key exists in the map and false otherwise.
+
+                for (let kv of map2.entries())
+                document.write(kv[0] + " : " + kv[1]+ "<br>");
+
+                document.write( "entries() = " + map2.entries().next().value +  "<br>");
+                document.write( "values() = " + map2.values().next().value +  "<br>");
+                document.write( "keys() = " + map2.keys().next().value +  "<br>");
+                for (let value of map2){
+                    document.write("values = " + value[1]+  "<br>")
+                }
+
+
+                /* 
+                Iterators
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+                    Section
+
+                    In JavaScript an iterator is an object which defines a sequence and potentially a return value upon its termination. More specifically an iterator is any object which implements the Iterator protocol by having a next() method which returns an object with two properties: value, the next value in the sequence; and done, which is true if the last value in the sequence has already been consumed. If value is present alongside done, it is the iterator's return value.
+                */
+
+            </script>
+
+
+        </div> <!-- == END Script Section == -->
+
+
+        <br>
+        
+
+      </div> <!-- == END of Map Methods Section == -->
+      <br><hr>
+
+      <div>  <!-- == SET  Section == -->
+        <h2>ES6 Set Object</h2>
+        <p >
+                A Set object can be used to hold unique values (no repetitions are allowed).<br>
+                A value in a set can be anything (objects and primitive values).
+                <br><br>
+                The syntax new Set([iterable]) creates a Set object where iterable is an array or any other iterable object of values.
+                <br><br>
+                The size property returns the number of distinct values in a set.<br>
+                <br>
+            <b>For example:</b>
+            <br><br>
+            <code>
+                <pre style="line-height: 0.5">
+                        let set = new Set([1, 2, 4, 2, 59, 9, 4, 9, 1]);</b>
+                        console.log(set.size); // 5</b>
+                </pre>
+            </code> 
+        </p>
+        <!-- == Script Section == -->
+        <div style="text-align: center; background-color: violet; font-size: 25px">
+
+            <script >
+ 
+                    let set = new Set([1, 2, 4, 2, 59, 9, 4, 9, 1]);
+
+                    document.write(set.size); // 5
+
+            </script>
+
+
+        </div> <!-- == END Script Section == -->
+        
+
+      </div> <!-- == END of SET Section == -->
+
+      <br>
+      <div>  <!-- == Map Methods Section == -->
+
+        <h3>SET Methods</h3>
+
+        <p >
+
+            <ol style="line-height: 1.2">
+                <li>
+                    <b> add(value)</b> 
+                       
+                    <pre> Adds a new element with the given value to the Set.</pre>
+                </li>
+                <li>
+                    <b> delete(value) </b> 
+                       
+                    <pre> Deletes a specified value from the set.</pre>
+                </li>
+                <li>
+                    <b> has(value)</b> 
+                       
+                    <pre> Returns true if a specified value exists in the set and false otherwise.</pre>
+                </li>
+                <li>
+                    <b> clear()</b> 
+                       
+                    <pre> Clears the set.</pre>
+                </li>
+                <li>
+                    <b> values()</b> 
+                        
+                    <pre> Returns an Iterator of values in the set.</pre>
+                </li>
+            
+            </ol>
+            <br><br>
+            <b>For example:</b>
+            <br><br>
+            <code>
+                <pre style="line-height: 0.5">
+                        let set = new Set();<br>
+                        set.add(5).add(9).add(59).add(9);<br>
+                        console.log(set.has(9));<br>
+                        for (let v of set.values())<br>
+                          console.log(v);<br>
+                </pre>
+            </code> 
+        </p>
+        <!-- == Script Section == -->
+        <div style="text-align: center; background-color: violet; font-size: 25px">
+
+            <script >
+
+                let set2 = new Set();
+
+                set2.add(5).add(9).add(59).add(9);
+
+                document.write(set2.has(9) + "<br>");
+
+                for (let v of set2.values())
+                document.write(v + ", ");
+
+
+                /* 
+                Iterators
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+                    Section
+
+                    In JavaScript an iterator is an object which defines a sequence and potentially a return value upon its termination. More specifically an iterator is any object which implements the Iterator protocol by having a next() method which returns an object with two properties: value, the next value in the sequence; and done, which is true if the last value in the sequence has already been consumed. If value is present alongside done, it is the iterator's return value.
+                */
+
+            </script>
+
+
+        </div> <!-- == END Script Section == -->
+
+
+        <br>
+        
+        <div>
+            <p>The above example demonstrates some of the ES6 Set methods.</p> 
+
+            <p class="notificationBox">
+                Set supports different data types i.e. 1 and "1" are two different values.
+                <br>
+                NaN and undefined can also be stored in Set.
+            </p>
+        </div>
+
+      </div> <!-- == END of SET Methods Section == -->
+      <br><hr>
+
+    </section>  
+
+
+<!--================= 
+  Primary footer
+=====================---->
+  	 <footer class="primary-footer clearfix" >
+  	    <small>&copy;UFidelit&aacute;s</small>
+        <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+      <nav>
+      </nav>
+  	 </footer>
+
+  </body>
+</html>

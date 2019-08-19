@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jquery Course - SoloLearn</title> 
+        <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+        <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+            <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+            
+            <script src="assets/javascript/main.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/javascript/test.js"></script>
+            <script src="assets/javascript/main.js"></script>
+
+    </head>
+
+    <body>
+        <!-- ===================
+        Primary header
+        ========================   ---->
+        <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/jQuery/" target="_blank">👉 Here.</a></h3>
+
+            <h3 style="position: absolute; right: 100px; top: 23px ">
+                Julio 24 &mdash; 2019; San José, C.R
+            </h3>
+        
+            <div class="navIcon" onclick="releaseNav()" >
+            <p>&equiv; </p> 
+            </div>
+
+            <nav class="fixSideNav" id="navIcon">
+                    <ul>
+                        <li>
+                        JavaScript
+                        <ul style="text-align: center">
+                            <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                            <li><a href="classes.html">Classes in ES6</a></li>
+                            <li><a href="mapSet.html">Map & Set</a></li>
+                            <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                            <li><a href="moreE6-2.html">Modules</a></li>
+                            
+                        </ul> 
+    
+                        </li>
+                        <li>
+                            JQuery
+                            <ul style="text-align: center">
+                                <li><a href="jquery.html">Overview</a></li>
+                                <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                                <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                                <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                                <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                                <li><a href="jqueryDOM.html">The DOM</a></li>
+                                <li><a href="jqueryEvents.html">Handling Events</a></li>
+                                <li><a href="jqueryEffects.html">Effects</a></li>
+                                <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </nav>
+
+        </header>
+
+        <br><br>
+
+        <!-- =================
+        Contenido Principal
+        ======================   ---->
+
+
+        <section class="container"> <!-- == Full Promises Section == -->
+
+            <h3>JQuery Overview</h3> 
+            <h3>learn.shayhowe info<a href="https://learn.shayhowe.com/advanced-html-css/jquery/#jquery" target="_blank">👉 Here.</a></h3>
+
+        
+            <div class="container">  <!-- == Attributes Section == -->
+            
+                <h2>Attributes</h2>
+        
+                <p>
+                    We can manipulate attributes assigned to HTML elements easily through jQuery.
+
+
+                    <br><br>
+                    <span class="spamtext">href, src, id, class, style</span>  are all examples of HTML attributes.
+                    <br><br>
+
+                    the <span class="spamtext2">attr()</span> <span class="spamtext">method</span> is used for getting the value of an attribute.
+                    <br><br>
+                    <b>For Example</b>
+                    <br><br>
+                    <b>HTML:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+
+                            &#8249;a href="www.sololearn.com"&#8250;<br>
+                                Click here<br>
+                            &#8249;/a&#8250;<br>
+                                
+                        </pre>
+                    </code> 
+
+                    <br><br>
+                    <b>JavaScript:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+
+                            
+                            $(function() {<br>
+                                var val = $("a").<span class="spamtext2">attr</span>("href");<br>
+                                alert(val);<br>
+                            });<br><br>
+                            // alerts "www.sololearn.com"<br>
+                        </pre>
+                    </code> 
+            
+                </p>
+
+                <div class="notificationBox">
+
+                    <p> In the code above we selected and alerted the value of the href attribute of the &#8249;a&#8250; element.</p>
+                
+                </div>
+            </div> <!-- == End of Attributes Section == -->
+
+            <div class="container">  <!-- == Additional Attributes Section == -->
+            
+                <h2>Additional Attributes Info</h2>
+        
+                <p>
+                    The <span class="spamtext2">attr()</span> <span class="spamtext">method</span> also allows us to set a value for an attribute by specifying it as the second parameter. 
+                    <br><br>
+                    <b>For Example</b>
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.4">
+                            
+                            $(function() {<br>
+                                $("a").attr("href", "http://www.jquery.com");<br>
+                                });<br>
+                                
+                        </pre>
+                    </code>
+            
+                </p>
+
+                <div class="notificationBox">
+
+                    <p> This will change the href attribute of the &#8249;a&#8250; element to the provided value.</p>
+                
+                </div>
+            </div> <!-- == End of Additional Attributes Section == -->
+
+            <div class="container">  <!-- == Attributes & Content Summary Section == -->
+            
+                <h2>Attributes & Content Summary</h2>
+        
+                <p>
+                    The following jQuery methods are available to <span class="spamtext">get</span> and <span class="spamtext">set</span> content and attributes of selected HTML elements: 
+
+                    <ol>
+                        <li>
+                            <span class="spamtext2">text()</span> sets or returns the text content of selected elements.
+                        </li>
+
+                        <li>
+                            <span class="spamtext2">html()</span> sets or returns the content of selected elements (including HTML markup).
+                        </li>
+
+                        <li>
+                            <span class="spamtext2">val()</span> sets or returns the value of form fields.
+                        </li>
+                        
+                        <li>
+                            <span class="spamtext2">attr()</span>  sets or returns the value of attributes.
+                        </li>
+                        
+                        <li>
+                            <span class="spamtext2">removeAttr()</span> removes the specified attribute.
+                        </li>
+                        
+                    </ol>
+
+            
+                </p>
+
+                <div class="notificationBox">
+
+                    <p> Write code and test every method at least one time.</p>
+                
+                </div>
+            </div> <!-- == End of Attributes & Content Summary Section == -->
+
+            <div class="container">  <!-- == Adding Content Section == -->
+            
+                <h2>Adding Content</h2>
+        
+                <p>
+                    The jQuery <span class="spamtext2">after()</span> and <span class="spamtext2">before()</span> methods insert content AFTER and BEFORE the selected HTML element.
+                    <br><br>
+                    <b>For example:</b>
+                    <br><br>
+                    <b>HTML:</b>
+                    <code>
+                        <pre style="line-height: 0.4">
+                                &#8249;p id="demo">Hi&#8249;/p>  
+                        </pre>
+                    </code>
+                    <b>JS:</b>
+                    <code>
+                        <pre style="line-height: 0.6">
+                                $(function() {<br>
+                                    $("#demo").before(" &#8249;i>Some Title &#8249;/i>"); <br>  
+                                    $("#demo").after(" &#8249;b>Welcome &#8249;/b>");<br>
+                                  });  <br>
+                        </pre>
+                    </code>
+
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+                        <p id="demo2"> <small>(without modification)</small>Hi </p>
+                        <p id="demo"><small>(with modification)</small>Hi</p>
+
+                    <script >
+
+                        $(function() {
+                            $("#demo").before("<i>Some Title</i>");   
+                            $("#demo").after("<b>Welcome</b>");
+                        });
+            
+                    </script>
+                </div> <!-- == END Script Section == -->
+
+            </div> <!-- == End of Adding Content Section == -->
+            <hr>
+            <div class="container">  <!-- == Adding Adding New Elements Section == -->
+            
+                <h2>Adding New Elements</h2>
+        
+                <p>
+                    The <span class="spamtext2">append()</span>,<span class="spamtext2">prepend()</span>,<span class="spamtext2">before()</span> and <span class="spamtext2">after()</span> methods can also be used to add newly created elements.
+                    <br><br>
+                    <ul>
+                        <li><span class="spamtext">append()</span> Inserts content at the end of selected elements</li>
+                        <li><span class="spamtext">prepend()</span> Inserts content at the beginning of selected elements </li>
+                        <li><span class="spamtext">before()</span> Inserts content before selected elements</li>
+                        <li><span class="spamtext">after()</span> Inserts content after selected elements</li>
+                    </ul>
+                    <br><br> 
+                    <b>The easiest way of creating a new HTML element with jQuery is the following:</b>
+                    <br><br>
+                    <code>
+                        <pre style="line-height: 0.4">
+                            var txt = $("&#8249;p>&#8249;/p>").text("Hi");   
+                        </pre>
+                    </code>
+                    <br>
+                    The code above creates a new &#8249;p> element, which contains the text Hi and assigns it to a variable called txt.
+                            <br><br>
+                    Now, we can use that variable as a parameter of the above mentioned methods to add it to our HTML, for example:
+                    <br><br>
+                    <b>HTML:</b>
+                    <code>
+                        <pre style="line-height: 0.6">
+                                &#8249;p id="demo">Hello&#8249;/p>
+                        </pre>
+                    </code>
+
+                    <b>JS: </b>
+                    <code>
+                        <pre style="line-height: 0.6">
+                                $(function() { <br>
+                                    var txt = $(" &#8249;p> &#8249;/p>").text("Hi"); <br>
+                                    $("#demo").after(txt); <br>
+                                  }); <br>
+                        </pre>
+                    </code>
+                    <br>
+                    This will insert the newly created&#8249;p> element after the #demo paragraph.
+                    <br><br>
+                    You can also specify multiple elements as arguments for the before(), after(), append(), prepend() 
+                    methods by separating them using commas: $("#demo").append(var1, var2, var3).
+
+                </p>
+
+                <!-- == Script Section == -->
+                <div style="text-align: center; background-color: violet; font-size: 25px">
+                        <p id="demo3">(no modification)Hello</p>
+                        <p id="demo4">(with modification)Hello</p>
+
+                    <script >
+                        $(function() {
+                                var txt2 = $("<p></p>").text("Esto est un nuevo <p> Hi");
+                                $("#demo4").after(txt2);
+                            });
+            
+                    </script>
+                </div> <!-- == END Script Section == -->
+
+                <div class="notificationBox">
+
+                        <p> 
+                            The above mentioned syntax for creating elements can be used to create any new HTML element, for example $("&#8249;div>&#8249;/div>") creates a new div.
+                        </p>
+                    
+                    </div>
+
+            </div> <!-- == End of Adding New Elements Section == -->
+
+            <hr>
+
+        </section>  
+
+
+
+
+
+
+        
+
+    <!--================= 
+    Primary footer
+    =====================---->
+        <footer class="primary-footer clearfix" >
+            <small>&copy;UFidelit&aacute;s</small>
+            <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+            <nav>
+            </nav>
+        </footer>
+
+    </body>
+</html>

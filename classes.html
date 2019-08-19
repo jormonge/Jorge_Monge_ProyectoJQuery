@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+  	<meta charset="utf-8">
+  	<title>JavaScript Course - SoloLearn</title> 
+    <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+    <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+      <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script src="assets/javascript/main.js"></script>
+    
+  </head>
+
+  <body>
+  	<!-- ===================
+      Primary header
+    ========================   ---->
+    <header class="primary-header clearfix menu" >
+
+        <h1 class="logo">SoloLearn JavaScript Course</h1> 
+        <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+        <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/JavaScript" target="_blank">👉 Here.</a></h3>
+
+      <h3 style="position: absolute; right: 100px; top: 23px ">
+        Julio 24 &mdash; 2019; San José, C.R
+      </h3>
+      
+      <div class="navIcon" onclick="releaseNav()" >
+      <p>&equiv; </p> 
+      </div>
+
+      <nav class="fixSideNav" id="navIcon">
+          <ul>
+              <li>
+              JavaScript
+              <ul style="text-align: center">
+                  <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                  <li><a href="classes.html">Classes in ES6</a></li>
+                  <li><a href="mapSet.html">Map & Set</a></li>
+                  <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                  <li><a href="moreE6-2.html">Modules</a></li>
+                  
+              </ul> 
+
+              </li>
+              <li>
+                  JQuery
+                  <ul style="text-align: center">
+                      <li><a href="jquery.html">Overview</a></li>
+                      <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                      <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                      <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                      <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                      <li><a href="jqueryDOM.html">The DOM</a></li>
+                      <li><a href="jqueryEvents.html">Handling Events</a></li>
+                      <li><a href="jqueryEffects.html">Effects</a></li>
+                      <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </nav>
+
+
+    </header>
+    <br><br>
+
+<!-- =================
+  Contenido Principal
+======================   ---->
+
+
+     <section class="container"> <!-- == Full Rest & Spread Section == -->
+
+      <h3> ECMAScript 6<br>ES6 Classes</h3> 
+      <h3>w3schools info<a href="https://www.w3schools.com/js/js_classes.asp" target="_blank">👉 Here.</a></h3>
+
+      
+
+      <h2>Classes in ES6</h2>
+
+      <div>  <!-- == class Section == -->
+
+        <p >
+                In this lesson we'll explain how to create a class that can be used to create multiple objects of the same structure.
+                <br><br>
+                A class uses the keyword class and contains a constructor method for initializing.
+                <br><br>
+                A class is a type of function, but instead of using the keyword function to initiate it, we use the keyword class, and the properties is assigned inside a constructor() method.
+                <br><br>
+                Use the keyword class to create a class, and always add a constructor method.
+                <br><br>
+                The constructor method is called each time the class object is initialized.
+                <br><br>
+                Now you can create objects using classes:
+                <br><br>
+            <code>
+              <pre style="line-height: 0.4">
+                    class Rectangle {<br>
+                        constructor(height, width) {<br>
+                          this.height = height;<br>
+                          this.width = width;<br>
+                        }<br>
+                      }<br>
+              </pre>
+            </code> 
+        </p>
+        <!-- == Script Section == -->
+        <div style="text-align: center; background-color: violet; font-size: 25px">
+
+            <script >
+ 
+                class Rectangle {
+                constructor(height, width) {
+                    this.height = height;
+                    this.width = width;
+                }
+                }
+
+            </script>
+
+        </div> <!-- == END Script Section == -->
+
+        
+        <p >
+                A declared class can then be used to create multiple objects using the keyword new.
+                <br><br>
+                For example:
+                <br><br>
+            <code>
+              <pre style="line-height: 0.4">
+                    const square = new Rectangle(5, 5);<br>
+                    const poster = new Rectangle(2, 3); <br>
+                    console.log(square.height);<br>
+              </pre>
+            </code> 
+        </p>
+
+        <div style="text-align: center; background-color: violet; font-size: 25px">
+
+                <script >
+     
+                    const square = new Rectangle(5, 5);
+                    const poster = new Rectangle(2, 3); 
+                    document.write( "square : " + JSON.stringify(square) + "<br>")
+                    document.write( "poster : " +JSON.stringify(poster)  + "<br>")
+    
+                </script> 
+    
+            </div> <!-- == END Script Section == -->
+            
+            <br>        
+            <p >
+              You can also define a class with a class expression, where the class can be named or unnamed.
+              <br>
+              A named class looks like:
+              <br><br>
+              For example:
+                <br><br>
+                <code>
+                  <pre style="line-height: 0.4">
+                    var Square = class Rectangle { <br>
+                      constructor(height, width) {<br>
+                          this.height = height;<br>
+                          this.width = width;<br>
+                        }<br>
+                      };<br>
+                      
+                      const square = new Square(5, 5);<br>
+                      const poster = new Square(2, 3); <br>
+                      
+                      console.log(square.height);<br>
+                  </pre>
+
+                </code> 
+            </p>
+
+            <p>
+              In the unnamed class expression, a variable is simply assigned the class definition: 
+              <br><br>
+              <code>
+                <pre style="line-height: 0.4">
+                  var Square = class { <br>
+                    constructor(height, width) { <br>
+                        this.height = height; <br>
+                        this.width = width; <br>
+                      } <br>
+                    }; <br>
+                    
+                    const square = new Square(5, 5); <br>
+                    const poster = new Square(2, 3);  <br>
+                    
+                    console.log(square.height); <br>
+                </pre>
+              </code>
+            </p>
+
+            <br>  
+            <div style="margin: 0 123px 0 123px ; background-color: slateblue; text-align: justify; padding: 12px">
+                  
+               <p> 
+                   Class Declarations are not hoisted while Function Declarations are. If you try to access your class before declaring it, ReferenceError will be returned.
+               </p>
+
+              <p>
+                Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+                <br><br>
+                  The let and const Keywords
+                  <br>
+                  Variables and constants declared with let or const are not hoisted!
+              </p>
+            </div>
+
+          <br><br>
+          <h2>Class Methods in ES6</h2>  
+        <p>   <!-- == Actual Usage of Rest Parameter SECTION== -->
+          ES6 introduced a shorthand that does not require the keyword function for a function assigned to a method's name. 
+          <br>
+          One type of class method is the prototype method, which is available to objects of the class.
+          <br><br>
+          <b>For Example:</b>
+          <br><br>
+
+            <code>
+              <pre style="line-height: 0.4">
+                class Rectangle {<br>
+                  constructor(height, width) {<br>
+                    this.height = height;<br>
+                    this.width = width;<br>
+                  }<br>
+                  get area() {<br>
+                    return this.calcArea();<br>
+                  }<br>
+                  calcArea() {<br>
+                    return this.height * this.width;<br>
+                  }<br>
+                }<br>
+                const square = new Rectangle(5, 5);<br>
+                console.log(square.area); // 25<br>
+              </pre>
+            </code>
+            <br>
+            The <b>get</b> keyword will bind an object property to a function. When this property is looked up now the getter function is called. The return value of the getter function then determines which property is returned.
+        </p> <!-- == Finish Actual Usage = -->
+
+        <p>
+            In the code above, area is a getter, calcArea is a method.
+        </p>
+
+        <div style="text-align: center; background-color: violet; font-size: 25px">
+
+            <script >
+
+              class Rectangle2 {
+                constructor(height, width) {
+                  this.height = height;
+                  this.width = width;
+                }
+                
+                get area() {
+                  return this.calcArea();
+                }
+
+                calcArea() {
+                  return this.height * this.width;
+                }
+              }
+
+              const square2 = new Rectangle2(5, 5);
+
+              document.write(square2.area); // 25
+
+
+            </script>
+            
+
+        </div> <!-- == END Script Section == -->
+        <br>
+        <h2 onclick="hideDiv()" class="btn btn-default" id="startGetSet">Click for: Property Getters and Setters</h2>  
+        <br>
+
+        <script> /*==========Script for hidding DIV=================  */
+
+          function hideDiv(){
+            var ocultar = document.getElementById("hiddenDiv");
+            if ( ocultar.style.display === "none" ){
+              ocultar.style.display = "block";
+            } else { 
+              ocultar.style.display = "none";
+                 } 
+          }
+
+        </script>
+
+
+        <div id="hiddenDiv" style="display: none" class="container2">
+            <h3>w3schools info<a href="https://www.w3schools.com/js/js_es5.asp" target="_blank">👉 Here.</a></h3>
+            <p>   <!-- == Actual Usage of Rest Parameter SECTION== -->
+              ES5 lets you define object methods with a syntax that looks like getting or setting a property
+                <br>
+                The <b>get</b> keyword will bind an object property to a function. When this property is looked up now the getter function is called. The return value of the getter function then determines which property is returned.
+            </p> <!-- == Finish Actual Usage = -->
+
+            <p>   <!-- == Actual Usage of Rest Parameter SECTION== -->
+
+              ES5 lets you define object methods with a syntax that looks like getting or setting a property.
+              <br>
+              This example creates a <b>getter</b> for a property called fullName:
+              <br><br>
+              
+
+                <code>
+                  <pre style="line-height: 0.4">
+                    // Create an object:<br>
+                    var person = {<br>
+                      firstName: "John",<br>
+                      lastName : "Doe",<br>
+                      get fullName() {<br>
+                        return this.firstName + " " + this.lastName;<br>
+                      }<br>
+                    };<br>
+
+                    // Display data from the object using a getter:<br>
+                    document.getElementById("demo").innerHTML = person.fullName; <br>
+                    // John Doe <br>
+                  </pre>
+                </code>
+                <br>
+
+
+            </p> <!-- == Finish Actual Usage = -->
+
+
+
+            <p>
+
+              This example creates a setter and a getter for the language property:
+              <br><br>
+              <code>
+                  <pre style="line-height: 0.4">
+                      var person = {<br>
+                        firstName: "John",{<br>
+                        lastName : "Doe",{<br>
+                        language : "NO",{<br>
+                        get lang() {{<br>
+                          return this.language;{<br>
+                        },{<br>
+                        set lang(value) {{<br>
+                          this.language = value;{<br>
+                        }{<br>
+                      };{<br>
+                      
+                      // Set an object property using a setter:{<br>
+                      person.lang = "en";{<br>
+                      
+                      // Display data from the object using a getter:{<br>
+                      document.getElementById("demo").innerHTML = person.lang;{<br>
+                  </pre>
+              </code>
+              
+              <button  onclick="imgWindow()" >Click here for Ex</button>
+              <br><br>  
+              <script>
+                  function imgWindow() {
+                  window.open("assets/img/getSetExample.JPG") }
+                </script>
+                <br><br>
+            </p>
+
+            <p>
+
+              This example uses a setter to secure upper case updates of language:
+              <br><br>
+              <code>
+                <pre style="line-height: 0.4">
+                  var person = {<br>
+                    firstName: "John",<br>
+                    lastName : "Doe",<br>
+                    language : "NO",<br>
+                    set lang(value) {<br> 
+                      this.language = value.toUpperCase();<br>
+                    }<br>
+                  };<br>
+                  
+                  // Set an object property using a setter:<br>
+                  person.lang = "en";<br>
+                  
+                  // Display data from the object:<br>
+                  document.getElementById("demo").innerHTML = person.language;<br>
+                </pre>
+              </code>
+
+              <button  onclick="imgWindow2()" >Click here for Ex</button>
+              <br><br>
+              <script>
+                  function imgWindow2() {
+                  window.open("assets/img/setterExample.JPG") }
+                </script>
+              <br><br>      
+            </p>
+            <br>  
+            <p>     
+             <b>So basically:</b>
+              <br><br>
+              <b>Getter/Get</b> = it establishes a property within the object for binding it to a function, returning its stament block. Get needs a return to be specified and no parameter
+                <br><br>
+              <b>Setter/Set</b> = Set is what happens when the object gets a parameter to its Get property. This one does not needs a return but does needs to reference its value or statement
+
+            </p>
+
+            <small style="margin: 0 45% 0 45%; background-color: steelblue; padding: 2px; border-radius: 3px; "><a href="#startGetSet" style="color: rgb(255, 255, 255) ">Back to top</a></small>
+            <br><br>
+        </div>
+
+        <br><br>
+        <div> <!-- == Start of Static Methods == -->
+ 
+            <h3>Static Methods</h3>
+            <p> <!-- == Rest Parameter ending notes Section == -->
+
+              Another type of method is the static method, which cannot be called through a class instance. Static methods are often used to create utility functions for an application.
+              <br> <br>
+              For Example:
+              <br> <br>
+              <code>
+                <pre style="line-height: 0.4">
+                  class Point { <br>
+                    constructor(x, y) {<br>
+                      this.x = x;<br>
+                      this.y = y;<br>
+                    }<br>
+                    static distance(a, b) {<br>
+                      const dx = a.x - b.x;<br>
+                      const dy = a.y - b.y;<br>
+                      return Math.hypot(dx, dy);<br>
+                    }<br>
+                  }<br>
+                  const p1 = new Point(7, 2);<br>
+                  const p2 = new Point(3, 8);<br>
+                  
+                  console.log(Point.distance(p1, p2));<br>
+                </pre>
+              </code>
+            </p>
+
+            <p>
+                As you can see, the static distance method is called directly using the class name, without an object.
+                
+            </p>
+            
+            <img  src="assets/img/mathHypot.JPG" style="display:block; ">   
+              
+            
+
+            <div style="text-align: center; background-color: violet; font-size: 25px; margin-top: 200px"> <!-- == Start Script Section == -->
+            
+                <script >
+
+                  class Point {
+                    constructor(x, y) {
+                      this.x = x;
+                      this.y = y;
+                    }
+                    static distance(a, b) {
+                      const dx = a.x - b.x;
+                      const dy = a.y - b.y;
+                      return Math.hypot(dx, dy);
+                    }
+                  }
+                  const p1 = new Point(7, 2);
+                  const p2 = new Point(3, 8);
+                  document.write(Point.distance(p1, p2) +"<br>");
+                  document.write( "p1 = " + JSON.stringify(p1)+ "<br>" + "p2 = "+ JSON.stringify(p2)+ "<br>");
+
+
+                </script>
+              
+
+            </div> <!-- == END Script Section == -->
+
+        </div> <!-- == End of Static Method == -->
+               
+
+
+      </div> <!-- == END of classSection == -->
+
+      <br><hr>
+
+      <div>  <!-- == Extends Section == -->
+
+          <h2>Inheritance in ES6</h2>  
+          <h4>Extends keyword</h4>
+          <p>   <!-- == Actual Usage of Rest Parameter SECTION== -->
+            The extends keyword is used in class declarations or class expressions to create a child of a class. The child inherits the properties and methods of the parent.
+            <br>
+            <b>For Example:</b>
+            <br><br>
+  
+              <code>
+                <pre style="line-height: 0.4">
+                  class Animal { <br>
+                    constructor(name) {<br>
+                      this.name = name;<br>
+                    }<br>
+                    speak() {<br>
+                      console.log(this.name + ' makes a noise.');<br>
+                    }<br>
+                  }<br>
+                  class Dog extends Animal {<br>
+                    speak() {<br>
+                      console.log(this.name + ' barks.');<br>
+                    }<br>
+                  }<br>
+                  
+                  let dog = new Dog('Rex');<br>
+                  dog.speak();<br>
+                </pre>
+              </code>
+              <br>
+              In the code above, the Dog class is a child of the Animal class, inheriting its properties and methods.
+          </p> <!-- == Finish Actual Usage = -->
+  
+          <div class="notificationBox">
+              <p>
+                If there is a constructor present in the subclass, it needs to first call super() before using this. <br>
+                Also, the super keyword is used to call parent's methods.
+              </p>
+          </div>
+  
+          <div style="text-align: center; background-color: violet; font-size: 25px">
+  
+              <script >
+  
+                class Animal {
+                  constructor(name) {
+                    this.name = name;
+                  }
+                  speak() {
+                    document.write(this.name + ' makes a noise.');
+                  }
+                } class Dog extends Animal { // the child class -- it is inheriting the name property from its class parent
+                    speak() {
+                      document.write(this.name + ' barks.');
+                    }
+                  }
+                let dog = new Dog('Rex'); // se puede llamar de una  a la subclase sin llamar primero a la clase  
+                dog.speak();
+  
+  
+              </script>
+          </div>
+      </div> <!-- == End oF Extends Section == -->
+      
+      <br><br> 
+      <div> <!-- == Super () - Extends Section == -->
+          <div>  
+            <h3>The super() method</h3>
+            <p>
+              The super() method refers to the parent class.
+              <br><br>
+              By calling the super() method in the constructor method, we call the parent's constructor method and gets access to the parent's properties and methods.
+              <br><br>
+              <code>
+                <pre style="line-height: 0.3">           
+                  class Car { <br>
+                    constructor(brand) {<br>
+                      this.carname = brand;<br>
+                    }<br>
+                    present() {<br>
+                      return 'I have a ' + this.carname;<br>
+                    }<br>
+                  }<br>            
+                  class Model extends Car {<br>
+                    constructor(brand, mod) {<br>
+                    <b>super</b> (brand);<br>
+                      this.model = mod;<br>
+                    }<br>
+                    show() {<br>
+                      return this.present() + ', it is a ' + this.model;<br>
+                    }<br>
+                  }<br>             
+                  mycar = new Model("Ford", "Mustang");<br>
+                  document.getElementById("demo").innerHTML = mycar.show();<br>
+                </pre>   
+
+              </code>
+            </p> 
+          </div>  
+
+          <div style="text-align: center; background-color: violet; font-size: 25px">
+  
+              <script >
+  
+                class Car {
+                  constructor(brand) {
+                    this.carname = brand;
+                  }
+                  present() {
+                    return 'I have a ' + this.carname;
+                  }
+                }
+
+                class Model extends Car {
+                  constructor(brand, mod) {
+                    super(brand);   // con super recuperas el key del parent constructor, y luego agregar otro key
+                    this.model = mod;
+                  }
+                  show() {
+                    return this.present() + ', it is a ' + this.model;
+                  }
+                }
+
+                mycar = new Model("Ford", "Mustang");
+                document.write(mycar.show() + "<br>" + "mycar = " +JSON.stringify(mycar))
+  
+  
+              </script>
+
+          </div>
+
+          <br><br>
+          
+          <div>
+              <p>
+                  For example, we can modify the program above to the following:
+                  <code>
+                    <pre style="line-height: 0.3">
+                        class Animal {<br>
+                          constructor(name) {<br>
+                            this.name = name;<br>
+                          }<br>
+                          speak() {<br>
+                            console.log(this.name + ' makes a noise.');<br>
+                          }<br>
+                        }<br>
+                        }<br>
+                        class Dog extends Animal {<br>
+                          speak() {<br>
+                            super.speak(); // Super<br>
+                            console.log(this.name + ' barks.');<br>
+                          }<br>
+                        }<br>
+                        let dog = new Dog('Rex');<br>
+                        dog.speak();<br>
+                    </pre>
+                  </code>
+              </p>
+          </div>
+
+          <div style="text-align: center; background-color: violet; font-size: 25px">
+  
+                <script >
+    
+                    class Animal2 {
+                      constructor(name) {
+                        this.name = name;
+                      }
+                      speak() {
+                        document.write(this.name + ' makes a noise.' + "<br>");
+                      }
+                    }
+
+                    class Dog2 extends Animal2 {
+                      speak() {
+                        super.speak(); // Super
+                        document.write(this.name + ' barks.' );
+                      }
+                    }
+
+                    let dog2 = new Dog2('Rex');
+                    dog2.speak();
+                    
+    
+                </script>
+  
+          </div>
+          
+          <br>
+          
+          <p class="notificationBox">
+            In the code above, the parent's speak() method is called using the super keyword.
+          </p>
+      </div><!-- == END of Super () - Extends Section == -->
+
+    </section>  
+
+
+<!--================= 
+  Primary footer
+=====================---->
+  	 <footer class="primary-footer clearfix" >
+  	    <small>&copy;UFidelit&aacute;s</small>
+        <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+      <nav>
+      </nav>
+  	 </footer>
+
+  </body>
+</html>

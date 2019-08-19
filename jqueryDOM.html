@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jquery Course - SoloLearn</title> 
+        <meta name="description" content="L"> <!-- Que es lo hacen? habla de lo que trata su pagina -->
+        <meta name="keywords" content=""> <!-- Que es lo hacen? permite las referencias por hashtag -->
+            <link rel="stylesheet" type="text/css" href="assets/styling/main.css">
+            
+            <script src="assets/javascript/main.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+            <script src="assets/javascript/test.js"></script>
+            <script src="assets/javascript/main.js"></script>
+
+    </head>
+
+    <body>
+        <!-- ===================
+        Primary header
+        ========================   ---->
+        <header class="primary-header clearfix menu" >
+
+            <h1 class="logo">SoloLearn JavaScript Course</h1> 
+            <h2 style="margin-left: 23px; font-size: 34px; ">Cool Exercises</h2>
+            <h3 style="margin-left: 23px">Link to Course <a href="https://www.sololearn.com/Play/jQuery/" target="_blank">👉 Here.</a></h3>
+
+            <h3 style="position: absolute; right: 100px; top: 23px ">
+                Julio 24 &mdash; 2019; San José, C.R
+            </h3>
+        
+            <div class="navIcon" onclick="releaseNav()" >
+            <p>&equiv; </p> 
+            </div>
+
+            <nav class="fixSideNav" id="navIcon">
+                    <ul>
+                        <li>
+                        JavaScript
+                        <ul style="text-align: center">
+                            <li><a href="sliderRest.html">Slider/Rest & Spread</a></li>
+                            <li><a href="classes.html">Classes in ES6</a></li>
+                            <li><a href="mapSet.html">Map & Set</a></li>
+                            <li ><a href="moreE6.html">Promises<br>Iterator & Generators</a></li>
+                            <li><a href="moreE6-2.html">Modules</a></li>
+                            
+                        </ul> 
+    
+                        </li>
+                        <li>
+                            JQuery
+                            <ul style="text-align: center">
+                                <li><a href="jquery.html">Overview</a></li>
+                                <li><a href="jqueryAttributes-Content.html">Attributes and Content</a></li>
+                                <li><a href="jqueryAddingRemovingClasses.html">Adding & Removing Classes</a></li>
+                                <li><a href="jqueryCSS_Properties.html">CSS Properties</a></li>
+                                <li><a href="jqueryCSS_Dimensions.html">Manipulating Dimensions</a></li>
+                                <li><a href="jqueryDOM.html">The DOM</a></li>
+                                <li><a href="jqueryEvents.html">Handling Events</a></li>
+                                <li><a href="jqueryEffects.html">Effects</a></li>
+                                <li><a href="jqueryAnimateEffects.html">Animate Effects</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </nav>
+
+        </header>
+
+        <br><br>
+
+        <!-- =================
+        Contenido Principal
+        ======================   ---->
+
+
+        <section class="container"> <!-- == Full Promises Section == -->
+
+            <h3>JQuery Manipulating the DOM</h3> 
+            <h3>learn.shayhowe info<a href="https://learn.shayhowe.com/advanced-html-css/jquery/#jquery" target="_blank">👉 Here.</a></h3>
+
+        
+            <div class="container">  <!-- == Dimensions Section == -->
+            
+                <h2>The DOM</h2>
+        
+                <p>
+
+                    The <span class="spamtext">DOM</span> represents a document as a tree structure where HTML elements are interrelated nodes in the tree.
+                    <br><br>
+                    Nodes can have <span class="spamtext">child nodes</span>. Nodes on the same tree level are called <span class="spamtext">siblings</span>.
+    
+                </p>
+
+                <img src="assets/img/theDOMTree.JPG" style="margin: 2px 26% 25px 26%">
+                <p>
+
+                    <b>Summary</b>
+                    <ul>
+                        <li>
+                            An <span class="spamtext2">ancestor</span> is a parent, grandparent, great-grandparent, and so on.
+                        </li>
+                        <li>
+                            A <span class="spamtext2">descendant</span> is a child, grandchild, great-grandchild, and so on.
+                        </li>
+                        <li>
+                            <span class="spamtext2">Siblings</span> share the same parent.
+                        </li>
+                    </ul>
+
+                    jQuery <span class="spamtext">traversing</span> is the term used to describe the process of moving through the DOM and finding (selecting) HTML elements based on their relation to other elements.
+                </p>
+
+                <hr>
+
+                <h2>Some of the most used traversal methods are presented below: </h2>
+
+                <table>
+                    <thead style="background-color:black; color: blanchedalmond">
+                        <th style="color: blanchedalmond ; font-weight: bolder">Method</th>
+                        <th style="color: blanchedalmond ; font-weight: bolder">What it Returns</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>parent()</b></td>
+                            <td>direct parent element of the selected element</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>parents()</b></td>
+                            <td>all ancestor elements of the selected element</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>children()</b></td>
+                            <td>all direct children of the selected element</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>siblings()</b></td>
+                            <td>all sibling elements</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>next()/nextAll()</b></td>
+                            <td>next/all next sibling element/s</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>prev()/prevAll()</b></td>
+                            <td>previous/all previous sibling element of the selected element</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>eq()</b></td>
+                            <td>element with a specific index number of the selected elements</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h2>The eq() method</h2>
+                <br>
+                <p>
+                    The <span class="spamtext">eq()</span> method can be used to select a specific element from multiple selected elements.
+                    <br><br>
+                    For example, if the page contains multiple div elements and we want to select the third one:
+                    <code>
+                        <pre style="line-height: 0.8">
+                $("div").eq(2);          
+                        </pre>
+                    </code> 
+                </p>
+
+
+                
+                <h2>Remove Elements</h2>
+
+                <br>
+
+                <p>
+                    We remove selected elements from the DOM using the <span class="spamtext">remove()</span> method.
+                </p>
+
+                <h2>Removing Content</h2>
+
+                <br>
+
+                <p>
+                    The <span class="spamtext">empty()</span> method is used to remove the child elements of the selected element(s).
+                </p>
+
+                <div class="notificationBox" style="text-align: center">
+
+                        <p>
+                            This removes all the three child elements of the div, leaving it empty.
+                        </p>      
+                </div>
+
+            </div> <!-- == End of Dimensions Section == -->
+
+
+
+        </section>  
+
+
+
+
+
+
+        
+
+    <!--================= 
+    Primary footer
+    =====================---->
+        <footer class="primary-footer clearfix" >
+            <small>&copy;UFidelit&aacute;s</small>
+            <small style="margin-left: 42%"><a href="#top">Back to top</a></small>
+            <nav>
+            </nav>
+        </footer>
+
+    </body>
+</html>
